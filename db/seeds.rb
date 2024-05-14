@@ -1,5 +1,4 @@
 require "open-uri"
-
 puts "Cleaning database"
 User.destroy_all
 Recipe.destroy_all
