@@ -16,7 +16,6 @@ Recipe.create(
   servings: 1,
   difficulty: "Easy",
   method: "1. Heat over medium heat. 2.Butter one side of each bread. 3.Add cheese.",
-  image_url: "https://upload.wikimedia.org/wikipedia/commons/1/13/Classic_Grilled_Cheese_Sandwich_%2825791331763%29_%28cropped%29.jpg"
 )
 
 Recipe.create(
@@ -27,7 +26,6 @@ Recipe.create(
   servings:1,
   difficulty: "Easy",
   method: "1. Peel the banana and break it into chunks. 2. Place banana chunks, peanut butter, milk, honey (if using), and a handful of ice cubes in a blender. 3. Blend until smooth and creamy. 4. Pour into a glass and serve immediately.",
-
 )
 
 Recipe.create(
@@ -38,7 +36,6 @@ Recipe.create(
   servings: 2,
   difficulty: "Easy",
   method: "1. Spread hummus evenly over the tortilla. 2. Layer shredded carrots, sliced cucumber, and baby spinach leaves on top of the hummus. 3. Roll up the tortilla tightly, tucking in the sides as you go. 4. Slice the wrap in half diagonally. 5. Serve immediately, or wrap in foil for an on-the-go meal.",
-
 )
 
 Recipe.create(
@@ -49,7 +46,6 @@ Recipe.create(
   servings: 1,
   difficulty: "Easy",
   method: "1. In a small saucepan, bring water or milk to a boil. 2. Stir in rolled oats and reduce heat to low. 3. Simmer uncovered for 5 minutes, stirring occasionally, until oats are thick and creamy. 4. Remove from heat and let stand for 1-2 minutes. 5. Transfer oatmeal to a bowl and top with mixed berries. 6. Drizzle with honey or maple syrup if desired. 7. Serve hot and enjoy!",
-
 )
 
 Recipe.create(
@@ -60,7 +56,6 @@ Recipe.create(
   servings: 2,
   difficulty: "Hard",
   method: "1. Heat olive oil in a large skillet over medium-high heat. 2. Add minced garlic and ginger, stir for 30 seconds. 3. Add sliced bell pepper, onion, carrot, and broccoli. Stir-fry for 5-7 minutes until vegetables are tender-crisp. 4. Drizzle with soy sauce and sesame oil, toss to combine. 5. Serve hot.",
-
 )
 
 Recipe.create(
@@ -71,7 +66,6 @@ Recipe.create(
   servings: 2,
   difficulty: "Easy",
   method: "1. Rinse and drain chickpeas, then transfer to a large bowl. 2. Chop cucumber, tomato, red onion, and olives, add to the bowl with chickpeas. 3. In a small bowl, whisk together olive oil, lemon juice, oregano, salt, and pepper. 4. Pour the dressing over the salad and toss to combine. 5. Refrigerate for at least 30 minutes before serving.",
-
 )
 
 # Recipe.create(
