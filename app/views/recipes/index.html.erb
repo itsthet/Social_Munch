@@ -1,13 +1,16 @@
 <h1>All Recipes</h1>
-<ul>
-  <% @recipes.each do |recipe| %>
-    <li><%= recipe.name %></li>
-    <li><%= recipe.description %></li>
-    <li><%= recipe.cooking_time%></li>
-    <li><%= recipe.servings%></li>
-    <li><%= recipe.difficulty%></li>
-    <li><%= recipe.method%></li>
-    <li><%= recipe.ratings %></li>
-    <li> <%= link_to "View Recipe", recipe_path(recipe) %> </li>
-  <% end %>
-</ul>
+<% if @recipes.present?%>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li><%= recipe.name %></li>
+      <li><%= recipe.method %></li>
+      <li><%= recipe.cooking_time%></li>
+      <li><%= recipe.servings%></li>
+      <li><%= recipe.difficulty%></li>
+      <li><%= recipe.ratings %></li>
+      <li> <%= link_to "View Recipe", recipe_path(recipe) %> </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p> No recipes found. </p>
+<% end %>
