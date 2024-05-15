@@ -1,1 +1,110 @@
 // Specific CSS for your home-page
+.banner {
+  background-color: white;
+  padding: 10px 0;
+}
+.banner h1{
+  color: black;
+  font-size: 48px;
+  margin: 0;
+  margin-left: 50px;
+}
+
+.search-bar {
+  color: black;
+  background-color: #c0dccf;
+  text-align: start;
+  // padding: 150px 0;
+  height: 400px;
+}
+
+.search-bar h6 {
+  font-size: 18px;
+  text-align: right;
+  margin-right: 50px;
+}
+
+.search-bar h2{
+  // text-align:left;
+  font-size: 30px;
+  padding: 50px;
+  // margin: 70px;
+  // vertical-align: text-top;
+}
+
+.search-container {
+  display: flex;
+  align-items: right;
+}
+
+.search-button{
+  background-color: green;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 0px 15px;
+  margin-right: 45px;
+}
+
+.search-button:hover {
+  background-color: rgb(0, 80, 0);
+}
+
+.search-box {
+  width: 100%;
+  padding: 0px;
+  border: none;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.popular-recipes {
+  background-color: rgb(245, 245, 245);
+  height: 500px;
+  padding:50px;
+}
+
+.feeling-confident {
+  background-color: rgb(244, 229, 224);
+  height: 250px;
+  padding: 25px;
+  text-align: center;
+  padding:20px;
+  font-size: 48px;
+}
+
+.random-recipe {
+  text-align: center;
+}
+
+.random-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px
+}
+
+.random-button:hover {
+  background-color: rgb(0, 80, 0)
+}
+
+.recipe-magic {
+  background-color: #c0dccf;;
+  padding: 25px;
+  text-align: center;
+  font-size: 48px;
+  height: 700px;
+}
+
+.footer {
+  background-color: white;
+  padding: 25px;
+  text-align: center;
+  height: 200px;
+  font: 48px;
+}
+
+// .search-container-2 {
+//   display: flex
+// }
