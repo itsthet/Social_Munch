@@ -1,9 +1,12 @@
 require "open-uri"
 puts "Cleaning database"
+Review.destroy_all
 User.destroy_all
 Recipe.destroy_all
+Favourite.destroy_all
 
 puts "Creating Users"
+
 user = User.create(email: "test@test.com", password: "123456")
 
 puts "Creating recipes..."
@@ -67,7 +70,8 @@ Recipe.create(
   difficulty: "Easy",
   method: "1. Rinse and drain chickpeas, then transfer to a large bowl. 2. Chop cucumber, tomato, red onion, and olives, add to the bowl with chickpeas. 3. In a small bowl, whisk together olive oil, lemon juice, oregano, salt, and pepper. 4. Pour the dressing over the salad and toss to combine. 5. Refrigerate for at least 30 minutes before serving.",
 )
-
+puts "Creating favourites empty"
+Favourite.create(recipe_id: 3, user_id: 2)
 # Recipe.create(
 #   name:
 #   description:
