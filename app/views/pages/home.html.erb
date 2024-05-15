@@ -8,10 +8,11 @@
   <div class=h6> What do you have in your kitchen?</h6></div>
 
   <div class="search-container">
-    <div class="search-box">
-      <input type="text" placeholder="Type your ingredients">
-    </div>
-    <button class="search-button">Search</div>
+  <div class="search-box">
+    <%= form_tag(recipes_path, method: :get) do %>
+      <%= text_field_tag :ingredients, nil, placeholder: "Type your ingredients" %>
+      <%= submit_tag "Search", class: "search-button" %>
+    <% end %>
   </div>
 </div>
 

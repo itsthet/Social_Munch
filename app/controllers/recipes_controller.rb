@@ -1,7 +1,11 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.all
+    if params[:ingredients].present?
+      @recipes = Recipe.where('ingredients LIKE ?', "%#{params[:ingredients]}%")
+      else
+        @recipes.all
+    end
   end
 
   def show
