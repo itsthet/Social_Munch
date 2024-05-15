@@ -5,12 +5,16 @@
     <%= link_to "Back to recipes", recipes_path %>
 </div>
 
-<%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
+<div class="actions">
+    <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
+</div>
 
-<p><strong>All Reviews</strong></p>
-<ul class="list-group">
-  <% @recipe.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.comment %></li>
-  <% end %>
-</ul>
+<div class="reviews">
+    <p><strong>All Reviews</strong></p>
+    <ul class="list-group">
+      <% @recipe.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.comment %></li>
+      <% end %>
+    </ul>
+</div>
 <br>
