@@ -8,9 +8,5 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
-  private
 
-  def review_params
-    params.require(:review).permit(:comment, :rating)
-  end
 end
