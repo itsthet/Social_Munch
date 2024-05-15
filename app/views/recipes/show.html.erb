@@ -1,4 +1,20 @@
-<h2><%= @recipe.name %></h2>
-<p><%= @recipe.description %></p>
-<p><%= @recipe.ratings %></p>
-<%= link_to "Go back", recipes_path %>
+<div class="recipe">
+    <h2><%= @recipe.name %></h2>
+    <p><%= @recipe.description %></p>
+    <p><%= @recipe.ratings %></p>
+    <%= link_to "Back to recipes", recipes_path %>
+</div>
+
+<div class="actions">
+    <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
+</div>
+
+<div class="reviews">
+    <p><strong>All Reviews</strong></p>
+    <ul class="list-group">
+      <% @recipe.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.comment %></li>
+      <% end %>
+    </ul>
+</div>
+<br>
