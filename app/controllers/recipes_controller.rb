@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @favourite = @recipe.favourites.find_by(user: current_user)
   end
 
 

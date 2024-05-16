@@ -9,7 +9,7 @@ class FavouritesController < ApplicationController
   def create
     @favourite = Favourite.new(recipe: @recipe, user: current_user)
     if @favourite.save
-      render json: { message: 'Added to favorites successfully' }, status: :created
+      render json: { message: 'Added to favorites successfully', favourite_id: @favourite.id }, status: :created
     else
       render json: { error: 'Failed to add to favorites' }, status: :unprocessable_entity
     end
@@ -19,6 +19,7 @@ class FavouritesController < ApplicationController
     @favourite = Favourite.find(params[:id])
     if @favourite
       @favourite.destroy
+      render json: { favourite_id: nil }
       # notice: 'Favourite removed successfully'
     else
       render json: { error: 'Favourite not found' }, status: :not_found
