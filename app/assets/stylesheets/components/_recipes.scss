@@ -48,7 +48,7 @@
 }
 
 .recipe-name {
-  margin-top: 0;
+  margin-top: 10px;
 }
 
 .view-recipe-link {
@@ -60,10 +60,16 @@
   text-decoration: none;
   border-radius: 5px;
   font-family: Crimson Text;
-  align-self: flex-end;
 }
 
 .recipe-name {
   font-family:Crimson Text;
-  font-size: small;
+  font-size: medium;
+}
+
+.recipe-image {
+  width: 175px;
+  height: 150px;
+  border-radius: 10%;
+
 }

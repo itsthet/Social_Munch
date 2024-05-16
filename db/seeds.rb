@@ -165,6 +165,7 @@ recipes = JSON.parse(recipes_serialized)
 
 # Iterate over the recipes and print some information
 recipes["results"].each do |recipe|
+  recipe_id = recipe['id']
   recipe_url = "https://api.spoonacular.com/recipes/#{recipe['id']}/information?includeNutrition=false"
 
 # Append the API key to the URL
@@ -179,6 +180,8 @@ ingredients = ''
 recipe['extendedIngredients'].each do |ingredient|
   ingredients += "#{ingredient['name']}, "
 end
+
+image_url = recipe_data['image']
 method = ''
 recipe['extendedIngredients'].each do |instruction|
   method += "#{instruction['original']}, "
