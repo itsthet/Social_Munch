@@ -31,12 +31,20 @@ export default class extends Controller {
           return response.json();
       })
       .then(data => {
-        console.log(data.message);
+        console.log(data.favourite_id)
+        this.setsFavouriteId(data.favourite_id)
         this.toggleHeartColor()
         ;
       })
       .catch(error => console.error('Error:', error));
 
+     }
+     setsFavouriteId(id) {
+       if (id) {
+        this.favouriteIdTarget.dataset.favouriteId = id;
+       } else {
+         this.favouriteIdTarget.dataset.favouriteId = "";
+       }
      }
      toggleHeartColor() {
       if (this.itemTarget.style.fontWeight === "100") {
