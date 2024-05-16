@@ -6,4 +6,9 @@ class PagesController < ApplicationController
   end
 
 
+  def dashboard
+    @favourites = current_user.favourites.includes(:recipe)
+  end
+
+
 end
