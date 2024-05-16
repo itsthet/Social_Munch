@@ -1,18 +1,40 @@
 // Specific CSS for your home-page
+.container-fluid {
+}
+
 .banner {
   background-color: white;
   padding: 10px 0;
+  display: flex;
 }
 .banner h1{
   color: black;
   font-size: 64px;
   margin: 0;
   margin-left: 30px;
+  font-family: cursive;
+}
+
+.banner-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.banner-buttons {
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.banner-buttons:hover {
+  background-color: #ababab;
 }
 
 .search-bar {
   color: black;
-  background-color: #c0dccf;
+  background-color: #D0E7DF;
   text-align: start;
   height: 400px;
 }
@@ -36,7 +58,7 @@
 }
 
 .search-button{
-  background-color: green;
+  background-color: #17674A;
   font-size: 14px;
   padding: 3px;
   margin-right: 45px;
@@ -58,21 +80,23 @@
   padding: 30px;
 }
 
-// .popular-recipes {
-//   background-color: rgb(245, 245, 245);
-//   height: 500px;
-//   padding:30px;
-//   // padding-top: 25px;
-//   // padding-bottom: 25px;
-// }
+.popular-recipe {
+  background-color: rgb(154, 218, 169);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  // height: 500px;
+  // padding:30px;
+  // padding-top: 25px;
+  // padding-bottom: 25px;
+}
 
 .feeling-confident {
-  background-color: rgb(244, 229, 224);
-  height: 250px;
+  background-color: #ede7e6;
   padding: 25px;
   text-align: center;
   padding:20px;
   font-size: 48px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .random-recipe {
@@ -80,7 +104,7 @@
 }
 
 .random-button {
-  background-color: green;
+  background-color: #17674A;
   color: white;
   padding: 40px 80px;
   border: none;
@@ -123,7 +147,7 @@
   margin-bottom: 40px;
   text-align: right;
   padding: 25px;
-  background-color: rgb(247, 236, 232);
+  background-color: #FAF4F3;
   width: 75%;
   height: 200px;
   border-radius: 5px;
@@ -135,7 +159,7 @@
   margin-bottom: 40px;
   text-align: left;
   padding: 25px;
-  background-color: rgb(247, 236, 232);
+  background-color: #FAF4F3;
   width: 75%;
   height: 200px;
   border-radius: 5px;
@@ -147,7 +171,7 @@
   margin-bottom: 40px;
   text-align: right;
   padding: 25px;
-  background-color: rgb(247, 236, 232);
+  background-color: #FAF4F3;
   width: 75%;
   height: 200px;
   border-radius: 5px;
@@ -155,30 +179,46 @@
 
 
 // BELOW ARE POPULAR RECIPES DIV PARTS //
+
+.popular-recipe-batch h2 {
+  margin: 60px;
+  font-size: 45px;
+  padding: 30px;
+}
+
+.popular-recipe-batch {
+  height: 500px;
+  // margin-top:50px;
+  margin-bottom: 50px;
+}
+
 .popular-recipe {
+
+  padding: 40px;
   overflow: hidden;
-  background: white;
+  background: #D0E7DF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .popular-recipe > img {
   height: 200px;
   width: 100%;
-  object-fit: cover;
+  // object-fit: cover;
 }
 
 .popular-recipe h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  // text-align: center;
+  justify-content: start
 }
 
 .popular-recipe p {
   font-size: 12px;
-  opacity: .7;
+  // opacity: .7;
   margin: 0;
 }
-
 
 .popular-recipe .popular-recipe-info {
   padding: 16px;
@@ -188,25 +228,15 @@
   position: relative;
 }
 
-.popular-recipe-info {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-
 .recipe-container {
   display: flex;
   justify-content: space-between;
-  margin-left: 100px;
-  margin-right: 100px;
 }
 
 .recipe-button {
   display: inline-block;
   // padding:10px 20px;
-  background-color: green;
+  background-color: #17674A;
   color: white;
   border: none;
   border-radius: 5px;
@@ -214,4 +244,30 @@
 
 .recipe-button:hover {
   background-color: rgb(0, 80, 0);
+}
+
+
+// FOOTER //
+.search-container-2 {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.search-button-2 {
+  background-color: #17674A;
+  font-size: 14px;
+  padding: 3px;
+  margin-right: 45px;
+  color: white;
+}
+
+.search-button-2:hover {
+  background-color: rgb(0, 80, 0);
+}
+
+.search-box-2 {
+  padding: 0px;
+  border: none;
+  border-radius: 4px;
 }
