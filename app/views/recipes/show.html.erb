@@ -22,8 +22,19 @@
 <br>
 
 
+
+<% if @recipe.favourites.where(user: current_user).first %>
 <div data-controller="heart">
     <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
-
-  <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+    <div data-heart-target="favouriteId" data-favourite-id="<%= @recipe.favourites.where(user: current_user).first.id %>">
+    <%= @recipe.favourites.where(user: current_user).count %>
+    <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
 </div>
+<% else %>
+<div data-controller="heart">
+    <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
+    <div data-heart-target="favouriteId" data-favourite-id="">
+    <%= @recipe.favourites.where(user: current_user).count %>
+   <i class="fa-solid fa-heart text-success" style="font-weight: 100;" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+</div>
+<% end %>
