@@ -22,7 +22,7 @@ class FavouritesController < ApplicationController
       render json: { favourite_id: nil }
       # notice: 'Favourite removed successfully'
     else
-      render json: { error: 'Favourite not found' }, status: :not_found
+      # render json: { error: 'Favourite not found' }, status: :not_found
     end
   end
 
