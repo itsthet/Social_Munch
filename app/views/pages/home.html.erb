@@ -1,81 +1,94 @@
 <div class="banner">
   <h1>Social Munch</h1>
+
+  <div class="banner-buttons">
+    <%= link_to "Home", root_path, class: "button" %>
+    <%#= link_to "Dashboard", dashboard_path, class: "button" %>
+    <%#= link_to "Challenges", challenges_path, class: "button" %>
+    <%#= link_to "Log In", login_path, class: "button" %>
+  </div>
 </div>
 
-<div class="search-bar">
-  <div class=h2> Enter Your Ingredients<br> and See the Magic</div>
 
-  <div class=h6> What do you have in your kitchen?</h6></div>
+
+
+<div class="search-bar">
+  <div class="h2"> Enter Your Ingredients<br> and See the Magic</div>
+
+  <div class="h6"> What do you have in your kitchen?</div>
 
   <div class="search-container">
     <div class="search-box">
       <input type="text" placeholder="Type your ingredients">
     </div>
-    <button class="search-button">Find Recipes</div>
+    <button class="search-button">Find Recipes</button>
   </div>
 </div>
 
 
 
-  <div class="popular">
-    <h2>Popular Recipes of the Week</h2>
 
-    <div class="recipe-container">
+<div class="popular-recipe-batch">
+  <h2>Popular Recipes of the Week</h2>
 
-      <div class="popular-recipe">
-        <img src="https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=" />
-        <div class="popular-recipe-info">
-          <div>
-            <h2>Grilled Cheese Sandwich</h2>
-            <p>Short description here!</p>
-          </div>
-        <%= link_to "View Recipe", recipe_path(@recipe), class: "recipe-button" %>
+  <div class="recipe-container">
+
+  <div class="w-100 d-flex justify-content-center">
+
+    <div class="popular-recipe">
+      <img src="https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=" />
+      <div class="popular-recipe-info">
+        <div>
+          <h2>Grilled Cheese Sandwich</h2>
+          <p>Short description here!</p>
         </div>
-      </div>
-
-      <div class="popular-recipe">
-        <img src="https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=" />
-        <div class="popular-recipe-info">
-          <div>
-            <h2>Grilled Cheese Sandwich</h2>
-            <p>Short description here!</p>
-          </div>
         <%= link_to "View Recipe", recipe_path(@recipe), class: "recipe-button" %>
-        </div>
       </div>
-
-      <div class="popular-recipe">
-        <img src="https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=" />
-        <div class="popular-recipe-info">
-          <div>
-            <h2>Grilled Cheese Sandwich</h2>
-            <p>Short description here!</p>
-          </div>
-        <%= link_to "View Recipe", recipe_path(@recipe), class: "recipe-button" %>
-        </div>
-      </div>
-
     </div>
-  </div>
 
+    <div class="popular-recipe">
+      <img src="https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=" />
+      <div class="popular-recipe-info">
+        <div>
+          <h2>Grilled Cheese Sandwich</h2>
+          <p>Short description here!</p>
+        </div>
+        <%= link_to "View Recipe", recipe_path(@recipe), class: "recipe-button" %>
+      </div>
+    </div>
+
+    <div class="popular-recipe">
+      <img src="https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=" />
+      <div class="popular-recipe-info">
+        <div>
+          <h2>Grilled Cheese Sandwich</h2>
+          <p>Short description here!</p>
+        </div>
+        <%= link_to "View Recipe", recipe_path(@recipe), class: "recipe-button" %>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
 
 
 
 <div class="feeling-confident">
   <h2>Feeling Confident?</h2>
 
-<div class="random-recipe">
-  <button class="random-button">Click here for a random recipe</button>
-</div>
+  <div class="random-recipe">
+    <button class="random-button">Click here for a random recipe</button>
+  </div>
 </div>
 
 <div class="recipe-magic">
 
   <h2>Recipe Magic</h2>
   <div class="step-1">
-  <h4>How it works</h4>
-  <h6>Enter your desired ingredients, recipes ideas, or dietary preferences and we will find the perfect<br>
-      recipes for you. Join us in transforming the way we plan and prepare meals.</h6>
+    <h4>How it works</h4>
+    <h6>Enter your desired ingredients, recipes ideas, or dietary preferences and we will find the perfect<br>
+        recipes for you. Join us in transforming the way we plan and prepare meals.</h6>
   </div>
 
   <div class="w-100 d-flex justify-content-end">
@@ -91,17 +104,19 @@
     or searching recipes blogs for ideas.</h6>
   </div>
 
-
 </div>
 
 
 <div class="footer">
   <h2>Sign up for our newsletter</h2>
 
-  <div class="search-container-2">
-    <div class="newsletter-box">
-      <input type="text" palceholder="Subscribe to our newsletter">
-    </div>
 
-    <button class="subscribe-button">Subscribe</button>
+    <div class="search-container-2">
+      <div class="sear-box-2">
+        <input type="text" palceholder="type your email">
+      </div>
+    <button class="search-button-2">Subscribe</button>
+  </div>
+
+  <p>&copy; 2024 Social Munch. All rights reserved.</p>
 </div>
