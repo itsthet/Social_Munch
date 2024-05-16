@@ -5,6 +5,6 @@ class Recipe < ApplicationRecord
   validates :name, presence: true
 
   has_many :reviews, dependent: :destroy
-  validates :name, :description, presence: true
+  validates :name,  presence: true
 
 end

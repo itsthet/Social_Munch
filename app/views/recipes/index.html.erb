@@ -1,35 +1,26 @@
-<div class="container">
+
   <div class="title">
     <h1>Recipes You Can Make</h1>
+  </div>
+  <div class="subtitle">
     <h3>Filter for Dietary Requirments</h3>
-    <div class="buttons-container">
+  </div>
+  <div class="buttons-container">
       <button class="round-button">VE</button>
       <button class="round-button">VG</button>
       <button class="round-button">GF</button>
       <button class="round-button">DF</button>
     </div>
-  </div>
 
   <div class="recipe">
     <% if @recipes.present? %>
-      <ul>
-        <% @recipes.each do |recipe| %>
-          <li>
-            <div class="recipe-spec">
-              <ul>
-                <li><%= recipe.name %></li>
-                <li>Cooking time: <%= recipe.cooking_time %></li>
-                <li>Serves: <%= recipe.servings %></li>
-                <li><%= recipe.difficulty %></li>
-                <li><%= recipe.ratings %></li>
-              </ul>
-            </div>
-            <li><%= link_to "View Recipe", recipe_path(recipe) %></li>
-          </li>
-        <% end %>
-      </ul>
+      <% @recipes.each do |recipe| %>
+        <div class="recipe-item">
+          <h3 class="recipe-name"><%= recipe.name %></h3>
+          <%= link_to "View Recipe", recipe_path(recipe), class: "view-recipe-link" %>
+        </div>
+      <% end %>
     <% else %>
       <p>No recipes found.</p>
     <% end %>
   </div>
-</div>
