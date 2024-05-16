@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show] do
     resources :reviews, only: [:create, :new]
     resources :favourites, only: [:create]
+
   end
+  resources :favourites, only: [:destroy]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
-
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
