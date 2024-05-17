@@ -1,15 +1,109 @@
-<div class="recipe">
-    <h2><%= @recipe.name %></h2>
-    <p><%= @recipe.description %></p>
-    <p><%= @recipe.ratings %></p>
-    <%= link_to "Back to recipes", recipes_path %>
+<div class="recipe-card">
+  <div class="recipe-image">
+     <%= image_tag "https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=", class: "recipe-image" %>
+  </div>
+  <div class="recipe-details">
+    <h1><%= @recipe.name %></h1>
+    <p>Cooking Time: <%= @recipe.cooking_time %> minutes</p>
+    <p>Servings: <%= @recipe.servings %></p>
+    <p>Difficulty: <%= @recipe.difficulty %></p>
+    <p>Ratings: <%= @recipe.ratings %></p>
+    <%= link_to "Back to All Recipes", recipes_path, class: "btn btn-secondary" %>
+  </div>
+  <div class="heart-section">
+    <div data-controller="heart">
+      <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
+      <i class="fa-solid fa-heart text-success" id="heartIcon" data-heart-target="item" data-action="click->heart#send"></i>
+    </div>
+  </div>
 </div>
+
+<div class="nutrition-table">
+  <table>
+    <tbody>
+      <tr class="category-row">
+        <td>
+          <div class="category-box">
+            <div class="category-name">Calories</div>
+            <div class="category-amount"></div>
+          </div>
+        </td>
+        <td>
+          <div class="category-box">
+            <div class="category-name">Fat</div>
+            <div class="category-amount"></div>
+          </div>
+        </td>
+        <td>
+          <div class="category-box">
+            <div class="category-name">Protein</div>
+            <div class="category-amount"></div>
+          </div>
+        </td>
+        <td>
+          <div class="category-box">
+            <div class="category-name">Carbs</div>
+            <div class="category-amount"></div>
+          </div>
+        </td>
+        <td>
+          <div class="category-box">
+            <div class="category-name">Fibre</div>
+            <div class="category-amount"></div>
+          </div>
+        </td>
+        <td>
+          <div class="category-box">
+            <div class="category-name">Sugar</div>
+            <div class="category-amount"></div>
+          </div>
+        </td>
+        <!-- Add more category cells as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="ingredient-card">
+  <div class="left-column">
+    <h2>Ingredients</h2>
+    <ul>
+    <% @recipe.method.split(',').each do |ingredient| %>
+        <li><%= ingredient.strip %></li>
+        <hr class="ingredient-divider">
+        <% end %>
+    </ul>
+
+
+    </ul>
+  </div>
+  <div class="right-column">
+    <h2>Method</h2>
+    <ol>
+
+    </ol>
+  </div>
+</div>
+
+
+
 
 
 
 <div class="actions">
     <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
 </div>
+<div class="rating-card">
+  <h1>Rate this Recipe</h1>
+  <br />
+  <span onclick="gfg(1)" class="star">★</span>
+  <span onclick="gfg(2)" class="star">★</span>
+  <span onclick="gfg(3)" class="star">★</span>
+  <span onclick="gfg(4)" class="star">★</span>
+  <span onclick="gfg(5)" class="star">★</span>
+</div>
+
+<script src="script.js"></script>
 
 <div class="reviews">
     <p><strong>All Reviews</strong></p>

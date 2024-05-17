@@ -4,7 +4,11 @@ class RecipesController < ApplicationController
     if params[:ingredients].present?
       @recipes = Recipe.where('ingredients LIKE ?', "%#{params[:ingredients]}%")
     else
+
+      @recipes = Recipe.all
+
       @recipes = @recipes.all
+
     end
   end
 
