@@ -1,0 +1,181 @@
+  .recipe-card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #D0E7DF;
+    margin-left: 30px;
+    margin-right: 30px;
+
+
+    .recipe-image {
+      flex: 0 0 auto;
+      padding: 30px;
+      margin-left: 20px;
+      margin-right: 15px;
+      img {
+        max-width: 600px;
+        height: 500px;
+        border-radius: 8px;
+      }
+    }
+
+    .heart-section {
+      position: absolute;
+      bottom: 15px; /* Adjust as needed for vertical positioning */
+      right: 15px; /* Adjust as needed for horizontal positioning */
+    }
+
+    .recipe-details {
+      margin-left: 100px;
+      margin-right: 50px;
+      padding: 70px;
+
+      flex: 1 1 auto;
+      color: black;
+
+      h1 {
+        font-size: 50px;
+        margin-bottom: 70px;
+        font-family: 'Crimson Text';
+      }
+      p {
+        margin-bottom: 10px;
+        font-family: 'Crimson Text';
+        font-size: 25px;
+      }
+      .btn {
+        margin-top: 100px;
+        font-family: 'Crimson Text';
+        background-color: #17674A;
+      }
+    }
+  }
+
+  .ingredient-card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #FAF4F3;
+    font-family: 'Crimson Text';
+    font-size: 20px;
+
+
+    .left-column,
+    .right-column {
+      flex: 1;
+    }
+
+    .left-column {
+      padding-right: 15px;
+      border-right: 1px solid #ccc;
+    }
+
+    .right-column {
+      padding-left: 15px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      font-family: 'Crimson Text';
+    }
+
+    ul,
+    ol {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  .ingredient-divider {
+    border: none;
+    border-top: 1px dashed #17674A; /* Adjust thickness and style as needed */
+    margin: 5px 0; /* Adjust margin as needed */
+  }
+
+  .nutrition-table {
+    margin-top: 20px;
+
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-left: 30px;
+
+      .category-row {
+        td {
+          padding: 15px; /* Adjust the padding for bigger gaps */
+          text-align: center;
+          vertical-align: middle;
+          background-color: #17674A;
+          color: white;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-family: 'Crimson Text';
+        }
+
+        /* Adjust margin between columns */
+        td + td {
+          margin-left: 30px; /* Adjust the gap between columns */
+        }
+      }
+
+      .category-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .category-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .category-amount {
+        font-size: 18px;
+      }
+    }
+  }
+
+  [data-controller="heart"] {
+    i.fa-heart {
+      font-size: 32px; /* Adjust the size as needed */
+    }
+  }
+
+  .rating-card {
+    margin-left: 30px;
+    color:#17674A;
+
+    h1 {
+
+    }
+
+    #star-container {
+      display: inline-block; // Ensure stars are in a horizontal row
+    }
+
+    .star {
+      cursor: pointer; // Pointer cursor to indicate they are clickable
+      font-size: 24px; // Adjust size as needed
+      margin-right: 5px; // Adjust spacing between stars
+    }
+  }
+
+.actions {
+  margin-left: 30px;
+
+}
