@@ -1,7 +1,13 @@
 <div class="recipe-card">
-  <div class="recipe-image">
-     <%= image_tag "https://media.istockphoto.com/id/1221237754/photo/two-halves-of-club-sandwich-on-white.jpg?s=612x612&w=0&k=20&c=jTThChWPJoFPxOdW1F4I-UzDqzS97iIgTm4-JJe-gOQ=", class: "recipe-image" %>
-  </div>
+ <% if @recipe.photo.attached? %>
+          <div class="recipe-image">
+            <%= cl_image_tag(@recipe.photo.key, class: "recipe-images") %>
+          </div>
+        <% else %>
+          <div class="recipe-image">
+            <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+          </div>
+        <% end %>
   <div class="recipe-details">
     <h1><%= @recipe.name %></h1>
     <p>Cooking Time: <%= @recipe.cooking_time %> minutes</p>
@@ -81,13 +87,8 @@
   </div>
 </div>
 
-
-
-
-
-
 <div class="actions">
-    <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
+    <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-success" %>
 </div>
 <div class="rating-card">
   <h1>Rate this Recipe</h1>

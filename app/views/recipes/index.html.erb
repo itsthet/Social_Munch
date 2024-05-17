@@ -19,7 +19,7 @@
       <div class="recipe-item">
         <% if recipe.photo.attached? %>
           <div class="recipe-image">
-            <%= cl_image_tag(recipe.photo.key, class: "recipe_image") %>
+            <%= cl_image_tag(recipe.photo.key, class: "recipe_images") %>
           </div>
         <% else %>
           <div class="recipe-image">

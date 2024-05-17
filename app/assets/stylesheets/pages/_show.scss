@@ -9,17 +9,18 @@
     margin-right: 30px;
 
 
-    .recipe-image {
+    .recipe-images {
       flex: 0 0 auto;
       padding: 30px;
-      margin-left: 20px;
+      margin-top:70px;
+      margin-left: 40px;
       margin-right: 15px;
       width: 600px;
       height: 500px;
       img {
         max-width: 600px;
         height: 500px;
-        border-radius: 8px;
+        border-radius: 12px;
       }
     }
 
@@ -29,9 +30,9 @@
       right: 15px;
 
       i.fa-heart {
-        font-size: 32px; /* Adjust the size as needed */
-        color: red; /* Adjust the color of the heart icon */
-        cursor: pointer; /* Ensure pointer cursor on hover */
+        font-size: 32px;
+        color: red;
+        cursor: pointer;
       }
     }
 
