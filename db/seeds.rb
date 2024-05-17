@@ -174,13 +174,12 @@ recipes_serialized = URI.open(recipe_url_with_key).read
 # Parse the JSON response
 recipe = JSON.parse(recipes_serialized)
 ingredients = ''
+method = ''
 recipe['extendedIngredients'].each do |ingredient|
   ingredients += "#{ingredient['name']}, "
+  method += "#{ingredient['original']}, "
 end
-method = ''
-recipe['extendedIngredients'].each do |instruction|
-  method += "#{instruction['original']}, "
-end
+image_url = recipe_data['image']
 Recipe.create!(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'], method: method,
 ingredients: ingredients)
 end
