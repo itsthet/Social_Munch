@@ -1,16 +1,37 @@
-<h1>All Recipes</h1>
-<% if @recipes.present?%>
-  <ul>
+
+<div class="title">
+  <h1>Recipes You Can Make</h1>
+</div>
+<div class="subtitle">
+  <h3>Filter for Dietary Requirments</h3>
+</div>
+<div class="buttons-container">
+    <button class="round-button">VE</button>
+    <button class="round-button">VG</button>
+    <button class="round-button">GF</button>
+    <button class="round-button">DF</button>
+  </div>
+
+<div class="recipe">
+  <% if @recipes.present? %>
     <% @recipes.each do |recipe| %>
-      <li><%= recipe.name %></li>
-      <li><%= recipe.method %></li>
-      <li><%= recipe.cooking_time%></li>
-      <li><%= recipe.servings%></li>
-      <li><%= recipe.difficulty%></li>
-      <li><%= recipe.ratings %></li>
-      <li> <%= link_to "View Recipe", recipe_path(recipe) %> </li>
+      <div class="recipe-item">
+        <% if recipe.photo.attached? %>
+          <div class="recipe-image">
+            <%= cl_image_tag(recipe.photo.key, width: 100, height: 100) %>
+          </div>
+        <% else %>
+          <div class="recipe-image">
+            <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+          </div>
+        <% end %>
+        <div class="recipe-info">
+          <h3 class="recipe-name"><%= recipe.name %></h3>
+          <%= link_to "View Recipe", recipe_path(recipe), class: "view-recipe-link" %>
+        </div>
+      </div>
     <% end %>
-  </ul>
-<% else %>
-  <p> No recipes found. </p>
-<% end %>
+  <% else %>
+    <p>No recipes found.</p>
+  <% end %>
+</div>
