@@ -2,7 +2,7 @@
   <h1>Social Munch</h1>
 
   <div class="banner-buttons">
-    <%= link_to "Home", root_path, class: "button" %>
+
     <%#= link_to "Dashboard", dashboard_path, class: "button" %>
     <%#= link_to "Challenges", challenges_path, class: "button" %>
     <%#= link_to "Log In", login_path, class: "button" %>
@@ -13,9 +13,11 @@
 
 
 <div class="search-bar">
-    <div class="h2"> Enter Your Ingredients<br> and See the Magic</div>
+    <div class="h2"> Enter Your Ingredients<br> and See the Magic
 
-    <div class="h6"> What do you have in your kitchen?</div>
+    </div>
+
+
 
     <div class="search-container">
 
@@ -24,9 +26,14 @@
           <%= text_field_tag :ingredients, nil, placeholder: "Type your ingredients" %>
           <%= submit_tag "Search", class: "search-button" %>
         <% end %>
+
     </div>
+    </div>
+    <div class="logo">
+        <%= image_tag "logo1.jpg"%>
     </div>
   </div>
+
 
 
 
