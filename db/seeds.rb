@@ -71,8 +71,6 @@ Recipe.create(
   difficulty: "Easy",
   method: "1. Rinse and drain chickpeas, then transfer to a large bowl. 2. Chop cucumber, tomato, red onion, and olives, add to the bowl with chickpeas. 3. In a small bowl, whisk together olive oil, lemon juice, oregano, salt, and pepper. 4. Pour the dressing over the salad and toss to combine. 5. Refrigerate for at least 30 minutes before serving.",
 )
-# puts "Creating favourites empty"
-# Favourite.create(recipe_id: 3, user_id: 2)
 
 # puts "Creating recipes..."
 
@@ -165,7 +163,6 @@ recipes = JSON.parse(recipes_serialized)
 
 # Iterate over the recipes and print some information
 recipes["results"].each do |recipe|
-  recipe_id = recipe['id']
   recipe_url = "https://api.spoonacular.com/recipes/#{recipe['id']}/information?includeNutrition=false"
 
 # Append the API key to the URL
@@ -180,8 +177,6 @@ ingredients = ''
 recipe['extendedIngredients'].each do |ingredient|
   ingredients += "#{ingredient['name']}, "
 end
-
-image_url = recipe_data['image']
 method = ''
 recipe['extendedIngredients'].each do |instruction|
   method += "#{instruction['original']}, "

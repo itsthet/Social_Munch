@@ -1,16 +1,17 @@
-
-<div class="title">
-  <h1>Recipes You Can Make</h1>
+<div class="header">
+    <div class="title">
+      <h1>Recipes You Can Make</h1>
+    </div>
+    <div class="subtitle">
+      <h3>Filter for Dietary Requirments</h3>
+    </div>
+    <div class="buttons-container">
+        <button class="round-button">VE</button>
+        <button class="round-button">VG</button>
+        <button class="round-button">GF</button>
+        <button class="round-button">DF</button>
+    </div>
 </div>
-<div class="subtitle">
-  <h3>Filter for Dietary Requirments</h3>
-</div>
-<div class="buttons-container">
-    <button class="round-button">VE</button>
-    <button class="round-button">VG</button>
-    <button class="round-button">GF</button>
-    <button class="round-button">DF</button>
-  </div>
 
 <div class="recipe">
   <% if @recipes.present? %>
