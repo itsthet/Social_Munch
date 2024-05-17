@@ -14,6 +14,8 @@
       padding: 30px;
       margin-left: 20px;
       margin-right: 15px;
+      width: 600px;
+      height: 500px;
       img {
         max-width: 600px;
         height: 500px;
@@ -23,8 +25,14 @@
 
     .heart-section {
       position: absolute;
-      bottom: 15px; /* Adjust as needed for vertical positioning */
-      right: 15px; /* Adjust as needed for horizontal positioning */
+      bottom: 15px;
+      right: 15px;
+
+      i.fa-heart {
+        font-size: 32px; /* Adjust the size as needed */
+        color: red; /* Adjust the color of the heart icon */
+        cursor: pointer; /* Ensure pointer cursor on hover */
+      }
     }
 
     .recipe-details {

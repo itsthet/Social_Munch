@@ -10,13 +10,9 @@
     <p>Ratings: <%= @recipe.ratings %></p>
     <%= link_to "Back to All Recipes", recipes_path, class: "btn btn-secondary" %>
   </div>
-  <div class="heart-section">
-    <div data-controller="heart">
-      <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
-      <i class="fa-solid fa-heart text-success" id="heartIcon" data-heart-target="item" data-action="click->heart#send"></i>
-    </div>
+
   </div>
-</div>
+
 
 <div class="nutrition-table">
   <table>

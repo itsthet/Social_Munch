@@ -13,19 +13,20 @@
 
 
 <div class="search-bar">
-  <div class="h2"> Enter Your Ingredients<br> and See the Magic</div>
+    <div class="h2"> Enter Your Ingredients<br> and See the Magic</div>
 
-  <div class="h6"> What do you have in your kitchen?</div>
+    <div class="h6"> What do you have in your kitchen?</div>
 
-  <div class="search-container">
+    <div class="search-container">
 
-  <div class="search-box">
-    <%= form_tag(recipes_path, method: :get) do %>
-      <%= text_field_tag :ingredients, nil, placeholder: "Type your ingredients" %>
-      <%= submit_tag "Search", class: "search-button" %>
-    <% end %>
+      <div class="search-box">
+        <%= form_tag(recipes_path, method: :get) do %>
+          <%= text_field_tag :ingredients, nil, placeholder: "Type your ingredients" %>
+          <%= submit_tag "Search", class: "search-button" %>
+        <% end %>
+    </div>
+    </div>
   </div>
-</div>
 
 
 
