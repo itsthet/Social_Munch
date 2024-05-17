@@ -1,3 +1,6 @@
+.header {
+  background-color: #FDF4F4;
+}
 .title {
   background-color: #FAF4F3 ;
   font-family: Crimson Text;
@@ -18,7 +21,6 @@
   padding-left: 30px;
 }
 
-
 .round-button {
   border-radius: 50%;
   width: 80px;
@@ -32,19 +34,17 @@
 }
 
 .recipe {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 60px;
   padding: 20px;
-
-
+  background-color: white;
 }
 
 .recipe-item {
   border: 1px solid #ddd;
   padding: 20px;
   background-color: #D0E7DF;
-  border-radius: 6%;
 }
 
 .recipe-name {
@@ -60,6 +60,7 @@
   text-decoration: none;
   border-radius: 5px;
   font-family: Crimson Text;
+  position: relative;
 }
 
 .recipe-name {
@@ -70,6 +71,4 @@
 .recipe-image {
   width: 175px;
   height: 150px;
-  border-radius: 10%;
-
 }
