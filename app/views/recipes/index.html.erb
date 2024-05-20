@@ -1,21 +1,25 @@
+
 <div class="header">
-    <div class="title">
-      <h1>Recipes You Can Make</h1>
-    </div>
-    <div class="subtitle">
-      <h3>Filter for Dietary Requirments</h3>
-    </div>
-    <div class="buttons-container">
-        <button class="round-button">VE</button>
-        <button class="round-button">VG</button>
-        <button class="round-button">GF</button>
-        <button class="round-button">DF</button>
-    </div>
+  <div class="title">
+    <h1>Recipes You Can Make</h1>
+  </div>
+  <div class="subtitle">
+    <h3>Filter for Dietary Requirements</h3>
+  </div>
+  <div class="buttons-container" data-controller="filter">
+    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="VE">VE</button>
+    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="VG">VG</button>
+    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="GF">GF</button>
+    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="DF">DF</button>
+    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="all">All</button>
+  </div>
 </div>
+
 
 <div class="recipe">
   <% if @recipes.present? %>
     <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe) do %>
       <div class="recipe-item">
       <%= link_to recipe_path(recipe) do %>
         <% if recipe.photo.attached? %>
@@ -29,12 +33,51 @@
         <% end %>
         <div class="recipe-info">
           <h3 class="recipe-name"><%= recipe.name %></h3>
-
         </div>
         <% end %>
       </div>
+      <% end %>
     <% end %>
   <% else %>
     <p>No recipes found.</p>
+
+<div class="recipes">
+  <% @recipes.each do |recipe| %>
+    <div class="recipe" data-requirements="<%= recipe.dietary_requirements %>">
+      <h3><%= recipe.name %></h3>
+      <p>Dietary Requirements: <%= recipe.dietary_requirements %></p>
+      <% if recipe.photo.attached? %>
+        <div class="recipe-image">
+          <%= cl_image_tag(recipe.photo.key, class: "recipe_images") %>
+        </div>
+      <% else %>
+        <div class="recipe-image">
+          <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+        </div>
+      <% end %>
+    </div>
+
   <% end %>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.round-button');
+    const recipes = document.querySelectorAll('.recipe');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+
+        recipes.forEach(recipe => {
+          const requirements = recipe.dataset.requirements.split(", ");
+          if (filter === 'all' || requirements.includes(filter)) {
+            recipe.style.display = 'block';
+          } else {
+            recipe.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
