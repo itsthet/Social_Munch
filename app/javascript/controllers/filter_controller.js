@@ -9,7 +9,6 @@ export default class extends Controller {
     const filter = event.target.dataset.filter;
 
     this.recipeTargets.forEach(recipe => {
-      console.log(this.recipeTargets);
       const requirements = recipe.dataset.requirements.split(", ");
       if (filter === 'all' || requirements.includes(filter)) {
         recipe.classList.remove('hidden');
