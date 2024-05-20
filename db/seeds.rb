@@ -178,15 +178,11 @@ recipe['extendedIngredients'].each do |ingredient|
   # method += "#{ingredient['original']}, "
 end
 
-
-  # Extract dietary requirements
   dietary_requirements = []
   dietary_requirements << 'VE' if recipe['vegetarian']
   dietary_requirements << 'VG' if recipe['vegan']
   dietary_requirements << 'GF' if recipe['glutenFree']
   dietary_requirements << 'DF' if recipe['dairyFree']
-
-  # method: method
 
 image_url = recipe['image']
 p image_url
