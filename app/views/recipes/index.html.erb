@@ -1,17 +1,17 @@
-
-<div class="header">
+<div class="content" data-controller="filter">
   <div class="title">
     <h1>Recipes You Can Make</h1>
   </div>
   <div class="subtitle">
     <h3>Filter for Dietary Requirements</h3>
   </div>
-  <div class="buttons-container" data-controller="filter">
-    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="VE">VE</button>
-    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="VG">VG</button>
-    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="GF">GF</button>
-    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="DF">DF</button>
-    <button class="round-button" data-action="click->filter#filterRecipes" data-filter="all">All</button>
+  <div class="content" >
+  <div class="buttons-container">
+    <button class="round-button" data-action="click->filter#filter" data-filter="VE">VE</button>
+    <button class="round-button" data-action="click->filter#filter" data-filter="VG">VG</button>
+    <button class="round-button" data-action="click->filter#filter" data-filter="GF">GF</button>
+    <button class="round-button" data-action="click->filter#filter" data-filter="DF">DF</button>
+    <button class="round-button" data-action="click->filter#filter" data-filter="all">All</button>
   </div>
 </div>
 
@@ -41,7 +41,7 @@
 
 <div class="recipes">
   <% @recipes.each do |recipe| %>
-    <div class="recipe" data-requirements="<%= recipe.dietary_requirements %>">
+    <div class="recipe" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
       <h3><%= recipe.name %></h3>
       <p>Dietary Requirements: <%= recipe.dietary_requirements %></p>
       <% if recipe.photo.attached? %>
@@ -57,25 +57,4 @@
 
   <% end %>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const buttons = document.querySelectorAll('.round-button');
-    const recipes = document.querySelectorAll('.recipe');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        const filter = this.dataset.filter;
-
-        recipes.forEach(recipe => {
-          const requirements = recipe.dataset.requirements.split(", ");
-          if (filter === 'all' || requirements.includes(filter)) {
-            recipe.style.display = 'block';
-          } else {
-            recipe.style.display = 'none';
-          }
-        });
-      });
-    });
-  });
-</script>
+</div>
