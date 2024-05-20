@@ -2,7 +2,12 @@ class RecipesController < ApplicationController
 
   def index
     if params[:ingredients].present?
-      @recipes = Recipe.where('ingredients LIKE ?', "%#{params[:ingredients]}%")
+      #the code "<~SQL" allows many lines of strings.
+      #Used "@@" to check if the query matches the 'ingredients'
+      sub_query = <<~SQL
+        ingredients @@ :query
+      SQL
+      @recipes = Recipe.where(sub_query, query: params[:ingredients])
     else
 
       @recipes = Recipe.all
