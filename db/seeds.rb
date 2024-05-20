@@ -174,10 +174,10 @@ recipes_serialized = URI.open(recipe_url_with_key).read
 # Parse the JSON response
 recipe = JSON.parse(recipes_serialized)
 ingredients = ''
-method = ''
+
 recipe['extendedIngredients'].each do |ingredient|
   ingredients += "#{ingredient['name']}, "
-  method += "#{ingredient['original']}, "
+  # method += "#{ingredient['original']}, "
 end
 
 
@@ -188,12 +188,12 @@ end
   dietary_requirements << 'GF' if recipe['glutenFree']
   dietary_requirements << 'DF' if recipe['dairyFree']
 
-
+  # method: method
 
 image_url = recipe['image']
 p image_url
 file = URI.open(image_url)
-new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'], method: method,
+new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'],
 ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '))
 
 new_recipe.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")

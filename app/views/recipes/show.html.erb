@@ -70,7 +70,7 @@
   <div class="left-column">
     <h2>Ingredients</h2>
     <ul>
-    <% @recipe.method.split(',').each do |ingredient| %>
+    <% @recipe.ingredients.split(',').each do |ingredient| %>
         <li><%= ingredient.strip %></li>
         <hr class="ingredient-divider">
         <% end %>
@@ -82,7 +82,7 @@
   <div class="right-column">
     <h2>Method</h2>
     <ol>
-
+     <%= @recipe.method %>
     </ol>
   </div>
 </div>
