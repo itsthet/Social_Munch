@@ -1,7 +1,21 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="filter"
+
 export default class extends Controller {
-  connect() {
+  static targets = ["button", "recipe"];
+
+  filter(event) {
+    console.log("hello");
+    const filter = event.target.dataset.filter;
+
+    this.recipeTargets.forEach(recipe => {
+      console.log(this.recipeTargets);
+      const requirements = recipe.dataset.requirements.split(", ");
+      if (filter === 'all' || requirements.includes(filter)) {
+        recipe.classList.remove('hidden');
+      } else {
+        recipe.classList.add('hidden');
+      }
+    });
   }
 }
