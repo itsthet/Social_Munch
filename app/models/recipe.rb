@@ -22,10 +22,10 @@ class Recipe < ApplicationRecord
   end
 
   def method
-  if super.blank?
-    set_method
-  else
-    super
+    if super.blank?
+      set_method
+    else
+      super
     end
   end
 

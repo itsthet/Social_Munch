@@ -82,7 +82,10 @@
   <div class="right-column">
     <h2>Method</h2>
     <ol>
-     <%= @recipe.method %>
+     <% @recipe.method.split('-').reject(&:blank?).each_with_index do |method,index| %>
+    <li><%= index + 1 %>. <%= method.strip %></li>
+     <hr class=method-divider>
+     <% end %>
     </ol>
   </div>
 </div>
