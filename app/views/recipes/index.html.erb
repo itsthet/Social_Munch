@@ -13,21 +13,20 @@
     <button class="round-button" data-action="click->filter#filter" data-filter="all">All</button>
   </div>
 
-
   <div class="recipes">
     <% @recipes.each do |recipe| %>
       <div class="recipe" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
         <h3><%= recipe.name %></h3>
         <p>Dietary Requirements: <%= recipe.dietary_requirements %></p>
-        <% if recipe.photo.attached? %>
-          <div class="recipe-image">
-            <%= cl_image_tag(recipe.photo.key, class: "recipe_images") %>
-          </div>
-        <% else %>
-          <div class="recipe-image">
-            <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
-          </div>
-        <% end %>
+        <div class="recipe-image">
+          <%= link_to recipe_path(recipe) do %>
+            <% if recipe.photo.attached? %>
+              <%= cl_image_tag(recipe.photo.key, class: "recipe_images") %>
+            <% else %>
+              <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
