@@ -121,7 +121,9 @@
     <div data-heart-target="favouriteId" data-favourite-id="<%= @favourite ? @favourite.id : "" %>">
     <%= @recipe.favourites.where(user: current_user).count %>
     <% if @favourite %>
-    <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+      <%#= link_to recipe_favourites_path(@recipe), data: {turbo_method: :post} do %>
+        <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+      <%# <% end %>
   <% else  %>
      <i class="fa-solid fa-heart text-success" style="font-weight: 100;" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
   <% end %>
