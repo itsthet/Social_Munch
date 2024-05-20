@@ -17,6 +17,7 @@
   <% if @recipes.present? %>
     <% @recipes.each do |recipe| %>
       <div class="recipe-item">
+      <%= link_to recipe_path(recipe) do %>
         <% if recipe.photo.attached? %>
           <div class="recipe-image">
             <%= cl_image_tag(recipe.photo.key, class: "recipe_images") %>
@@ -28,8 +29,9 @@
         <% end %>
         <div class="recipe-info">
           <h3 class="recipe-name"><%= recipe.name %></h3>
-          <%= link_to "View Recipe", recipe_path(recipe), class: "view-recipe-link" %>
+
         </div>
+        <% end %>
       </div>
     <% end %>
   <% else %>
