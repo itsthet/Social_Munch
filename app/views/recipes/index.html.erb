@@ -16,6 +16,7 @@
 <div class="recipe">
   <% if @recipes.present? %>
     <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe) do %>
       <div class="recipe-item">
         <% if recipe.photo.attached? %>
           <div class="recipe-image">
@@ -28,9 +29,9 @@
         <% end %>
         <div class="recipe-info">
           <h3 class="recipe-name"><%= recipe.name %></h3>
-          <%= link_to "View Recipe", recipe_path(recipe), class: "view-recipe-link" %>
         </div>
       </div>
+      <% end %>
     <% end %>
   <% else %>
     <p>No recipes found.</p>
