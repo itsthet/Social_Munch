@@ -181,12 +181,21 @@ recipe['extendedIngredients'].each do |ingredient|
 end
 
 
+  # Extract dietary requirements
+  dietary_requirements = []
+  dietary_requirements << 'VE' if recipe['vegetarian']
+  dietary_requirements << 'VG' if recipe['vegan']
+  dietary_requirements << 'GF' if recipe['glutenFree']
+  dietary_requirements << 'DF' if recipe['dairyFree']
+
+
 
 image_url = recipe['image']
 p image_url
 file = URI.open(image_url)
 new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'], method: method,
-ingredients: ingredients)
+ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '))
+
 new_recipe.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 new_recipe.save!
 

@@ -7,4 +7,5 @@ class Recipe < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :name, presence: true
   has_one_attached :photo
+  attribute :dietary_requirements, :string
 end
