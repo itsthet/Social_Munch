@@ -20,5 +20,6 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @favourite = @recipe.favourites.find_by(user: current_user)
+    @recommended_recipes = Recipe.where.not(id: @recipe.id).limit(2)
   end
 end
