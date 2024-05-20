@@ -1,11 +1,12 @@
-import { Controller } from "@hotwired/stimulus"
-
+import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["item", "recipeId", "favouriteId"]
+  static targets = ["item", "recipeId", "favouriteId"];
+
   connect() {
-    console.log("hello from controller")
+    console.log("hello from controller");
   }
+
   send() {
     const recipeId = this.recipeIdTarget.dataset.recipeId;
     const favouriteId = this.favouriteIdTarget.dataset.favouriteId;
@@ -13,7 +14,7 @@ export default class extends Controller {
     const delete_url = `/favourites/${favouriteId}`;
     let isFavorited = this.itemTarget.style.fontWeight != "100";
 
-    console.log(isFavorited)
+    console.log(isFavorited);
 
     const options = {
       method: isFavorited ? "DELETE" : "POST",
@@ -28,30 +29,29 @@ export default class extends Controller {
         if (!response.ok) {
           throw new Error('Failed to update favorites');
         }
-          return response.json();
+        return response.json();
       })
       .then(data => {
-        console.log(data.favourite_id)
-        this.setsFavouriteId(data.favourite_id)
-        this.toggleHeartColor()
-        ;
+        console.log(data.favourite_id);
+        this.setsFavouriteId(data.favourite_id);
+        this.toggleHeartColor();
       })
       .catch(error => console.error('Error:', error));
+  }
 
-     }
-     setsFavouriteId(id) {
-       if (id) {
-        this.favouriteIdTarget.dataset.favouriteId = id;
-       } else {
-         this.favouriteIdTarget.dataset.favouriteId = "";
-       }
-     }
-     toggleHeartColor() {
-      if (this.itemTarget.style.fontWeight === "100") {
-        this.itemTarget.style.fontWeight = "";
-      } else {
-        this.itemTarget.style.fontWeight = "100";
-      }
-     }
+  setsFavouriteId(id) {
+    if (id) {
+      this.favouriteIdTarget.dataset.favouriteId = id;
+    } else {
+      this.favouriteIdTarget.dataset.favouriteId = "";
+    }
+  }
 
+  toggleHeartColor() {
+    if (this.itemTarget.style.fontWeight === "100") {
+      this.itemTarget.style.fontWeight = "";
+    } else {
+      this.itemTarget.style.fontWeight = "100";
+    }
+  }
 }
