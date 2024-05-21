@@ -12,33 +12,31 @@
 
 
 <div class="search-bar" data-controller="typedjs">
-    <div class="h2"> Enter Your Ingredients and See the Magic
-
+    <div class="h2" >
+      Enter Your Ingredients and See the Magic
     </div>
 
 
-
     <div class="search-container">
+        <div class="search-box">
+          <%= form_tag(recipes_path, method: :get) do %>
+            <%= text_field_tag :ingredients, nil, data: {typedjs_target: "input"}, placeholder:"Type Your Ingredients"%>
+            <%= submit_tag "Search", class: "search-button" %>
+          <% end %>
+        </div>
+    </div>
 
-      <div class="search-box">
-        <%= form_tag(recipes_path, method: :get) do %>
-          <%= text_field_tag :ingredients, nil, data: {typedjs_target: "input"}%>
-          <%= submit_tag "Search", class: "search-button" %>
-        <% end %>
+    <div class="all-recipes">
+      <%= link_to 'View All Recipes', recipes_path, class: 'btn btn-secondary my-3' %>
+    </div>
 
-      </div>
-      </div>
+    <div class="logo">
+      <%= image_tag "logo1.jpg"%>
+    </div>
 
-      <div class="all-recipes">
-        <%= link_to 'All Recipes', recipes_path, class: 'button' %>
-      </div>
-
-      <div class="logo">
-          <%= image_tag "logo1.jpg"%>
-      </div>
+</div>
 
 
-  </div>
 
 <div class="popular-recipe-batch">
   <h2>Popular Recipes of the Week</h2>

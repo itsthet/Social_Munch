@@ -86,7 +86,7 @@
 
 
 .search-container {
-  display: flex;
+  // display: flex;
   align-items: center;
   margin-left: 30px;
 }
@@ -109,7 +109,7 @@
 }
 
 .search-box {
-  margin-left: 650px;
+  // margin-left: 650px;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -348,10 +348,16 @@
 }
 
 .all-recipes {
-  display: inline-block;
-  // padding:10px 20px;
-  background-color: #17674A;
+  padding: 3%;
+  display: flex;
   color: white;
   border: none;
   border-radius: 5px;
+  flex-wrap: nowrap;
+  align-items: center;
+  /* align-content: center; */
+  flex-direction: column;
+  .btn {
+    background-color: #17674A;
+  }
 }
