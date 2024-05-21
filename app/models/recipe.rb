@@ -8,7 +8,8 @@ class Recipe < ApplicationRecord
   validates :name, presence: true
   has_one_attached :photo
   attribute :dietary_requirements, :string
-  # has_many :ratings, dependent: :destroy
+  scope :popular, -> { joins(:reviews).group(:id).order('COUNT(reviews.id) DESC') }
+
 
   def set_method
     client = OpenAI::Client.new
