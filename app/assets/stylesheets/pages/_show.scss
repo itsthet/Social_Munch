@@ -10,6 +10,7 @@
 
 
     .recipe-images {
+      object-fit: cover;
       flex: 0 0 auto;
       padding: 30px;
       margin-top:70px;
@@ -17,6 +18,8 @@
       margin-right: 15px;
       width: 600px;
       height: 500px;
+      object-fit: cover;
+
       img {
         max-width: 600px;
         height: 500px;

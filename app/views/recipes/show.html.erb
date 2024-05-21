@@ -13,7 +13,17 @@
     <p>Cooking Time: <%= @recipe.cooking_time %> minutes</p>
     <p>Servings: <%= @recipe.servings %></p>
     <p>Difficulty: <%= @recipe.difficulty %></p>
-    <p>Ratings: <%= @recipe.ratings %></p>
+    <p>Ratings: <span class="star-rating">
+        <% (1..5).each do |i| %>
+          <% if i <= @recipe.average_rating %>
+            <span class="bi bi-star-fill star-filled"></span>
+          <% else %>
+            <span class="bi bi-star"></span>
+          <% end %>
+        <% end %>
+      </span>
+    </p>
+
     <%= link_to "Back to All Recipes", recipes_path, class: "btn btn-secondary" %>
   </div>
 
@@ -27,19 +37,19 @@
         <td>
           <div class="category-box">
             <div class="category-name">Calories</div>
-            <div class="category-amount"></div>
+            <div class="category-amount"><%= @recipe.calories %>kcal</div>
           </div>
         </td>
         <td>
           <div class="category-box">
             <div class="category-name">Fat</div>
-            <div class="category-amount"></div>
+            <div class="category-amount"><%= @recipe.fat  %>g</div>
           </div>
         </td>
         <td>
           <div class="category-box">
             <div class="category-name">Protein</div>
-            <div class="category-amount"></div>
+            <div class="category-amount"><%= @recipe.protein %>g</div>
           </div>
         </td>
         <td>
@@ -70,7 +80,7 @@
   <div class="left-column">
     <h2>Ingredients</h2>
     <ul>
-    <% @recipe.method.split(',').each do |ingredient| %>
+    <% @recipe.ingredients.split(',').each do |ingredient| %>
         <li><%= ingredient.strip %></li>
         <hr class="ingredient-divider">
         <% end %>
@@ -82,7 +92,10 @@
   <div class="right-column">
     <h2>Method</h2>
     <ol>
-
+     <% @recipe.method.split(/\d+\./).reject(&:blank?).each_with_index do |method,index| %>
+    <li><%= index + 1 %>- <%= method.strip %></li>
+     <hr class=method-divider>
+     <% end %>
     </ol>
   </div>
 </div>
@@ -90,15 +103,7 @@
 <div class="actions">
     <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
 </div>
-<div class="rating-card">
-  <h1>Rate this Recipe</h1>
-  <br />
-  <span onclick="gfg(1)" class="star">★</span>
-  <span onclick="gfg(2)" class="star">★</span>
-  <span onclick="gfg(3)" class="star">★</span>
-  <span onclick="gfg(4)" class="star">★</span>
-  <span onclick="gfg(5)" class="star">★</span>
-</div>
+
 
 <script src="review.js"></script>
 
@@ -112,10 +117,6 @@
 </div>
 <br>
 
-
-
-
-
 <div data-controller="heart">
     <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
     <div data-heart-target="favouriteId" data-favourite-id="<%= @favourite ? @favourite.id : "" %>">
@@ -125,4 +126,30 @@
   <% else  %>
      <i class="fa-solid fa-heart text-success" style="font-weight: 100;" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
   <% end %>
+</div>
+
+<div class="recommended-recipes">
+    <h3>Recommended Recipes</h3>
+    <div class="recipes">
+      <% @recommended_recipes.each do |recommended_recipe| %>
+        <div class="recipe">
+          <h4><%= link_to recommended_recipe.name, recipe_path(recommended_recipe) %></h4>
+          <p>Dietary Requirements: <%= recommended_recipe.dietary_requirements %></p>
+          <% if recommended_recipe.photo.attached? %>
+            <div class="recipe-image">
+              <%= link_to recipe_path(recommended_recipe) do %>
+                <%= cl_image_tag(recommended_recipe.photo.key, class: "recipe_images") %>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="recipe-image">
+              <%= link_to recipe_path(recommended_recipe) do %>
+                <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

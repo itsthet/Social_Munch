@@ -12,145 +12,143 @@ user = User.create(email: "test@test.com", password: "123456")
 
 puts "Creating recipes..."
 
-# Recipe.create(
-#   name: "Classic Grilled Cheese Sandwich",
-#   description: "Quick and easy to make, perfect for any meal or snack.",
-#   ingredients: "2 slices of bread, 2 slices of cheese, and butter.",
-#   cooking_time: 5,
-#   servings: 1,
-#   difficulty: "Easy",
-#   method: "1. Heat over medium heat. 2.Butter one side of each bread. 3.Add cheese.",
-# )
+file = URI.open("https://upload.wikimedia.org/wikipedia/commons/3/33/Espaguetis_carbonara.jpg")
+recipe_1 = Recipe.create(
+  name: "Classic Spaghetti Carbonara",
+  description: "A creamy and indulgent pasta dish with bacon and Parmesan cheese.",
+  ingredients: "200g spaghetti, 100g pancetta or bacon, 2 large eggs, 50g grated Parmesan cheese, black pepper, salt.",
+  cooking_time: 20,
+  servings: 2,
+  difficulty: "Medium",
+  method: "1. Cook spaghetti until al dente. 2. Fry pancetta until crisp. 3. Whisk eggs with Parmesan. 4. Toss cooked pasta in egg mixture.",
+)
+recipe_1.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_1.save
 
-# Recipe.create(
-#   name: "Peanut BUtter Banana Smoothie",
-#   description:"A nutricious and delicious smoothie that's perfect for breakfast or a quick snack.",
-#   ingredients:"1 ripe banana, 2 tbsp peanut butter, 1 cup milk (or dairy-free alternative), 1 tbsp honey, and ice cubes.",
-#   cooking_time:3,
-#   servings:1,
-#   difficulty: "Easy",
-#   method: "1. Peel the banana and break it into chunks. 2. Place banana chunks, peanut butter, milk, honey (if using), and a handful of ice cubes in a blender. 3. Blend until smooth and creamy. 4. Pour into a glass and serve immediately.",
-# )
+file = URI.open("https://www.recipesmadeeasy.co.uk/wp-content/uploads/2019/10/spicy-beef-tacos-4.jpg")
+recipe_2 = Recipe.create(
+  name: "Spicy Beef Tacos",
+  description: "A flavorful twist on classic tacos with seasoned beef, spicy salsa, and fresh toppings.",
+  ingredients: "500g ground beef, taco seasoning, 8 small tortillas, lettuce, tomato, onion, cheese, salsa, sour cream, lime wedges.",
+  cooking_time: 25,
+  servings: 4,
+  difficulty: "Easy",
+  method: "1. Brown ground beef and season with taco seasoning. 2. Warm tortillas in a skillet. 3. Assemble tacos with beef and toppings. 4. Serve with salsa, sour cream, and lime wedges."
+)
+recipe_2.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_2.save
 
-# Recipe.create(
-#   name: "Hummus and Veggie Wrap",
-#   description: "A quick and healthy lunch option featuring creamy hummus and crunchy vegetables wrapped in a tortilla.",
-#   ingredients: "1 large flour tortilla, 1/4 cup hummus, 1/4 cup shredded carrots, 1/4 cup sliced cucumber, 1/4 cup baby spinach leaves",
-#   cooking_time: 20,
-#   servings: 2,
-#   difficulty: "Easy",
-#   method: "1. Spread hummus evenly over the tortilla. 2. Layer shredded carrots, sliced cucumber, and baby spinach leaves on top of the hummus. 3. Roll up the tortilla tightly, tucking in the sides as you go. 4. Slice the wrap in half diagonally. 5. Serve immediately, or wrap in foil for an on-the-go meal.",
-# )
+file = URI.open("https://img.freepik.com/premium-photo/savory-beef-vegetable-stirfry-generative-ai_147933-1369.jpg")
+recipe_3 = Recipe.create(
+  name: "Savory Beef Stir Fry",
+  description: "A flavorful blend of tender beef strips, crisp vegetables, and savory sauce.",
+  ingredients: "300g beef steak, mixed vegetables (bell peppers, broccoli, carrots), soy sauce, garlic, ginger, cornstarch, rice.",
+  cooking_time: 25,
+  servings: 2,
+  difficulty: "Medium",
+  method: "1. Marinate beef strips in soy sauce, garlic, and ginger. 2. Stir-fry vegetables until tender-crisp. 3. Cook beef until browned. 4. Add sauce and simmer. 5. Combine with vegetables.",
+)
+recipe_3.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_3.save
 
-# Recipe.create(
-#   name: "Oatmeal with Berries",
-#   description: "A warm and comforting breakfast option made with hearty oats and sweet, juicy berries.",
-#   ingredients: "1/2 cup rolled oats, 1 cup water or milk, 1/2 cup mixed berries (such as strawberries, blueberries, raspberries), 1 tbsp honey or maple syrup (optional)",
-#   cooking_time: 15,
-#   servings: 1,
-#   difficulty: "Easy",
-#   method: "1. In a small saucepan, bring water or milk to a boil. 2. Stir in rolled oats and reduce heat to low. 3. Simmer uncovered for 5 minutes, stirring occasionally, until oats are thick and creamy. 4. Remove from heat and let stand for 1-2 minutes. 5. Transfer oatmeal to a bowl and top with mixed berries. 6. Drizzle with honey or maple syrup if desired. 7. Serve hot and enjoy!",
-# )
+file = URI.open("https://www.acouplecooks.com/wp-content/uploads/2022/10/Margherita-Pizza-093.jpg")
+recipe_4 = Recipe.create(
+  name: "Homemade Margherita Pizza",
+  description: "Classic Italian pizza topped with fresh tomatoes, mozzarella, and basil leaves.",
+  ingredients: "Pizza dough, 1 cup tomato sauce, fresh mozzarella cheese, fresh basil leaves, olive oil, salt, pepper.",
+  cooking_time: 15,
+  servings: 2,
+  difficulty: "Easy",
+  method: "1. Roll out pizza dough. 2. Spread sauce and top with cheese and basil. 3. Bake until crust is golden and cheese is bubbly.",
+)
+recipe_4.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_4.save
 
-# Recipe.create(
-#   name: "Vegetable Stir Fry",
-#   description: "A quick and healthy stir fry recipe packed with colorful vegetables and savory flavors.",
-#   ingredients: "1 bell pepper, 1 onion, 1 carrot, 1 cup broccoli florets, 2 cloves garlic, 2 tbsp soy sauce, 1 tbsp sesame oil, 1 tsp ginger, 1 tbsp olive oil",
-#   cooking_time: 15,
-#   servings: 2,
-#   difficulty: "Hard",
-#   method: "1. Heat olive oil in a large skillet over medium-high heat. 2. Add minced garlic and ginger, stir for 30 seconds. 3. Add sliced bell pepper, onion, carrot, and broccoli. Stir-fry for 5-7 minutes until vegetables are tender-crisp. 4. Drizzle with soy sauce and sesame oil, toss to combine. 5. Serve hot.",
-# )
+file = URI.open("https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/07/Garlic-Grilled-Shrimp-Skewers-7.jpg")
+recipe_5 = Recipe.create(
+  name: "Zesty Lemon Garlic Shrimp",
+  description: "Juicy shrimp cooked in a tangy lemon-garlic sauce, perfect for a quick dinner.",
+  ingredients: "300g shrimp, garlic, lemon juice, butter, parsley, salt, pepper.",
+  cooking_time: 10,
+  servings: 2,
+  difficulty: "Easy",
+  method: "1. Sauté garlic in butter. 2. Add shrimp and cook until pink. 3. Deglaze with lemon juice. 4. Season with salt, pepper, and parsley.",
+)
+recipe_5.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_5.save
 
-# Recipe.create(
-#   name: "Mediterranean Chickpea Salad",
-#   description: "A refreshing salad bursting with Mediterranean flavors and protein-rich chickpeas.",
-#   ingredients: "1 can chickpeas, 1 cucumber, 1 tomato, 1/4 red onion, 1/4 cup Kalamata olives, 2 tbsp olive oil, 1 tbsp lemon juice, 1 tsp dried oregano, Salt and pepper to taste",
-#   cooking_time: 10,
-#   servings: 2,
-#   difficulty: "Easy",
-#   method: "1. Rinse and drain chickpeas, then transfer to a large bowl. 2. Chop cucumber, tomato, red onion, and olives, add to the bowl with chickpeas. 3. In a small bowl, whisk together olive oil, lemon juice, oregano, salt, and pepper. 4. Pour the dressing over the salad and toss to combine. 5. Refrigerate for at least 30 minutes before serving.",
-# )
+file = URI.open("https://food-images.files.bbci.co.uk/food/recipes/hearty_vegetable_soup_14365_16x9.jpg")
+recipe_6 = Recipe.create(
+  name: "Hearty Vegetable Soup",
+  description: "A comforting soup packed with a variety of colorful vegetables and flavorful broth.",
+  ingredients: "Assorted vegetables (carrots, celery, onions, potatoes), vegetable broth, garlic, thyme, bay leaf, salt, pepper.",
+  cooking_time: 40,
+  servings: 4,
+  difficulty: "Easy",
+  method: "1. Sauté vegetables until softened. 2. Add broth, garlic, thyme, and bay leaf. 3. Simmer until vegetables are tender. 4. Season to taste.",
+)
+recipe_6.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_6.save
 
-# puts "Creating recipes..."
+file = URI.open("https://www.savoryexperiments.com/wp-content/uploads/2023/11/Chicken-Tenders-21.jpg")
+recipe_7 = Recipe.create(
+  name: "Crispy Baked Chicken Tenders",
+  description: "Tender chicken strips coated in a crispy breadcrumb crust, baked to golden perfection.",
+  ingredients: "Chicken breast strips, breadcrumbs, Parmesan cheese, eggs, garlic powder, paprika, salt, pepper.",
+  cooking_time: 25,
+  servings: 2,
+  difficulty: "Easy",
+  method: "1. Dip chicken in beaten eggs. 2. Coat with breadcrumb mixture. 3. Bake until golden and crispy.",
+)
+recipe_7.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_7.save
 
-# Recipe.create(
-#   name: "Classic Grilled Cheese Sandwich",
-#   description: "Quick and easy to make, perfect for any meal or snack.",
-#   ingredients: "2 slices of bread, 2 slices of cheese, and butter.",
-#   cooking_time: 5,
-#   servings: 1,
-#   difficulty: "Easy",
-#   method: "1. Heat over medium heat. 2.Butter one side of each bread. 3.Add cheese.",
-# )
+file = URI.open("https://www.cookinwithmima.com/wp-content/uploads/2021/08/Caprese-Salad-2-6.jpg")
+recipe_8 = Recipe.create(
+  name: "Refreshing Caprese Salad",
+  description: "A simple yet elegant salad showcasing ripe tomatoes, fresh mozzarella, and fragrant basil.",
+  ingredients: "Tomatoes, fresh mozzarella cheese, fresh basil leaves, balsamic glaze, olive oil, salt, pepper.",
+  cooking_time: 10,
+  servings: 2,
+  difficulty: "Easy",
+  method: "1. Arrange tomato and mozzarella slices on a plate. 2. Drizzle with olive oil and balsamic glaze. 3. Season with salt, pepper, and garnish with basil leaves.",
+)
+recipe_8.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_8.save
 
-# Recipe.create(
-#   name: "Peanut BUtter Banana Smoothie",
-#   description:"A nutricious and delicious smoothie that's perfect for breakfast or a quick snack.",
-#   ingredients:"1 ripe banana, 2 tbsp peanut butter, 1 cup milk (or dairy-free alternative), 1 tbsp honey, and ice cubes.",
-#   cooking_time:3,
-#   servings:1,
-#   difficulty: "Easy",
-#   method: "1. Peel the banana and break it into chunks. 2. Place banana chunks, peanut butter, milk, honey (if using), and a handful of ice cubes in a blender. 3. Blend until smooth and creamy. 4. Pour into a glass and serve immediately.",
-# )
+file = URI.open("https://www.lilvienna.com/wp-content/uploads/Recipe-easy-mushroom-risotto.jpg")
+recipe_9 = Recipe.create(
+  name: "Creamy Mushroom Risotto",
+  description: "A rich and creamy Italian rice dish flavored with earthy mushrooms and Parmesan cheese.",
+  ingredients: "Arborio rice, mushrooms (such as cremini or shiitake), onion, garlic, vegetable broth, white wine, Parmesan cheese, butter, parsley.",
+  cooking_time: 35,
+  servings: 2,
+  difficulty: "Medium",
+  method: "1. Sauté mushrooms, onion, and garlic. 2. Add rice and cook until translucent. 3. Deglaze with wine. 4. Gradually add broth and stir until creamy. 5. Stir in Parmesan and butter.",
+)
+recipe_9.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_9.save
 
-# Recipe.create(
-#   name: "Hummus and Veggie Wrap",
-#   description: "A quick and healthy lunch option featuring creamy hummus and crunchy vegetables wrapped in a tortilla.",
-#   ingredients: "1 large flour tortilla, 1/4 cup hummus, 1/4 cup shredded carrots, 1/4 cup sliced cucumber, 1/4 cup baby spinach leaves",
-#   cooking_time: 20,
-#   servings: 2,
-#   difficulty: "Easy",
-#   method: "1. Spread hummus evenly over the tortilla. 2. Layer shredded carrots, sliced cucumber, and baby spinach leaves on top of the hummus. 3. Roll up the tortilla tightly, tucking in the sides as you go. 4. Slice the wrap in half diagonally. 5. Serve immediately, or wrap in foil for an on-the-go meal.",
-# )
-
-# Recipe.create(
-#   name: "Oatmeal with Berries",
-#   description: "A warm and comforting breakfast option made with hearty oats and sweet, juicy berries.",
-#   ingredients: "1/2 cup rolled oats, 1 cup water or milk, 1/2 cup mixed berries (such as strawberries, blueberries, raspberries), 1 tbsp honey or maple syrup (optional)",
-#   cooking_time: 15,
-#   servings: 1,
-#   difficulty: "Easy",
-#   method: "1. In a small saucepan, bring water or milk to a boil. 2. Stir in rolled oats and reduce heat to low. 3. Simmer uncovered for 5 minutes, stirring occasionally, until oats are thick and creamy. 4. Remove from heat and let stand for 1-2 minutes. 5. Transfer oatmeal to a bowl and top with mixed berries. 6. Drizzle with honey or maple syrup if desired. 7. Serve hot and enjoy!",
-# )
-
-# Recipe.create(
-#   name: "Vegetable Stir Fry",
-#   description: "A quick and healthy stir fry recipe packed with colorful vegetables and savory flavors.",
-#   ingredients: "1 bell pepper, 1 onion, 1 carrot, 1 cup broccoli florets, 2 cloves garlic, 2 tbsp soy sauce, 1 tbsp sesame oil, 1 tsp ginger, 1 tbsp olive oil",
-#   cooking_time: 15,
-#   servings: 2,
-#   difficulty: "Hard",
-#   method: "1. Heat olive oil in a large skillet over medium-high heat. 2. Add minced garlic and ginger, stir for 30 seconds. 3. Add sliced bell pepper, onion, carrot, and broccoli. Stir-fry for 5-7 minutes until vegetables are tender-crisp. 4. Drizzle with soy sauce and sesame oil, toss to combine. 5. Serve hot.",
-# )
-
-# Recipe.create(
-#   name: "Mediterranean Chickpea Salad",
-#   description: "A refreshing salad bursting with Mediterranean flavors and protein-rich chickpeas.",
-#   ingredients: "1 can chickpeas, 1 cucumber, 1 tomato, 1/4 red onion, 1/4 cup Kalamata olives, 2 tbsp olive oil, 1 tbsp lemon juice, 1 tsp dried oregano, Salt and pepper to taste",
-#   cooking_time: 10,
-#   servings: 2,
-#   difficulty: "Easy",
-#   method: "1. Rinse and drain chickpeas, then transfer to a large bowl. 2. Chop cucumber, tomato, red onion, and olives, add to the bowl with chickpeas. 3. In a small bowl, whisk together olive oil, lemon juice, oregano, salt, and pepper. 4. Pour the dressing over the salad and toss to combine. 5. Refrigerate for at least 30 minutes before serving.",
-# )
+file = URI.open("https://thescranline.com/wp-content/uploads/2023/09/FLUFFY-PANCAKES-S-01.jpg")
+recipe_10 = Recipe.create(
+  name: "Fluffy Pancakes with Maple Syrup",
+  description: "Deliciously light and fluffy pancakes drizzled with sweet maple syrup.",
+  ingredients: "Flour, milk, eggs, baking powder, salt, butter, maple syrup.",
+  cooking_time: 15,
+  servings: 2,
+  difficulty: "Easy",
+  method: "1. Mix dry ingredients. 2. Add wet ingredients and whisk until smooth. 3. Cook on a hot griddle until golden. 4. Serve with butter and maple syrup.",
+)
+recipe_10.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_10.save
 
 
-# Recipe.create(
-#   name:
-#   description:
-#   ingredients:
-#   cooking_time:
-#   servings:
-#   difficulty:
-#   method:
-#   image_url:
-# )
 
 require "json"
 require "open-uri"
 
  url = "https://api.spoonacular.com/recipes/complexSearch?number=10"
- api_key = ENV['RECIPEAPI']
+ api_key = ENV['FOODAPI']
 
 # Append the API key to the URL
 url_with_key = "#{url}&apiKey=#{api_key}"
@@ -173,28 +171,36 @@ recipes_serialized = URI.open(recipe_url_with_key).read
 
 # Parse the JSON response
 recipe = JSON.parse(recipes_serialized)
+
+# Extract calories, protein, and fat using regular expressions
+calories = recipe.dig('summary')&.match(/(\d+)\s*calories/i)&.captures&.first
+protein = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*protein/i)&.captures&.first
+fat = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*fat/i)&.captures&.first
+
+# Convert extracted values to integers
+calories = calories.to_i if calories
+protein = protein.to_i if protein
+fat = fat.to_i if fat
+
 ingredients = ''
-method = ''
+
 recipe['extendedIngredients'].each do |ingredient|
   ingredients += "#{ingredient['name']}, "
-  method += "#{ingredient['original']}, "
+  # method += "#{ingredient['original']}, "
 end
 
-
-  # Extract dietary requirements
   dietary_requirements = []
   dietary_requirements << 'VE' if recipe['vegetarian']
   dietary_requirements << 'VG' if recipe['vegan']
   dietary_requirements << 'GF' if recipe['glutenFree']
   dietary_requirements << 'DF' if recipe['dairyFree']
 
-
-
 image_url = recipe['image']
 p image_url
 file = URI.open(image_url)
-new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'], method: method,
-ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '))
+
+  new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'],
+  ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '), calories: calories, protein: protein, fat: fat)
 
 new_recipe.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 new_recipe.save!
