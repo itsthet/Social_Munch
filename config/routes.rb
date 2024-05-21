@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create]
 
   end
-  resources :chatrooms, only: [:index, :show, :new, :create]
+  resources :chatrooms, only: [:index, :show, :new, :create] do
+    resources :messages, only: [:create]
+  end
   resources :favourites, only: [:destroy]
+
   get "/dashboard", to: "pages#dashboard", as: :dashboard
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

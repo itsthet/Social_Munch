@@ -6,6 +6,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @chatroom = Chatroom.find(params[:id])
+    @message = Message.new
   end
 
   def new
@@ -16,6 +17,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new(chatroom_params)
     @chatroom.user = current_user
 
+
     if @chatroom.save
       redirect_to @chatroom, notice: 'Chatroom was successfully created'
     else
@@ -23,10 +25,11 @@ class ChatroomsController < ApplicationController
     end
   end
 
-
   private
 
   def chatroom_params
     params.required(:chatroom).permit(:name)
   end
+
+
 end
