@@ -11,9 +11,6 @@ class RecipesController < ApplicationController
     else
 
       @recipes = Recipe.all
-
-      @recipes = @recipes.all
-
     end
   end
 
@@ -21,5 +18,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @favourite = @recipe.favourites.find_by(user: current_user)
     @recommended_recipes = Recipe.where.not(id: @recipe.id).limit(2)
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :description, :paired_wines, :pairing_text)
   end
 end

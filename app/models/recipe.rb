@@ -1,15 +1,14 @@
 class Recipe < ApplicationRecord
   has_many :favourites
-
   has_many :reviews
   validates :name, presence: true
-
   has_many :reviews, dependent: :destroy
   validates :name, presence: true
   has_one_attached :photo
   attribute :dietary_requirements, :string
+  attribute :paired_wines, :string
+  attribute :pairing_text, :text
   scope :popular, -> { joins(:reviews).group(:id).order('COUNT(reviews.id) DESC') }
-
 
   def set_method
     client = OpenAI::Client.new
