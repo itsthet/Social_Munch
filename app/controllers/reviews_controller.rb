@@ -12,7 +12,8 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to recipe_path(@recipe)
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = "Something went wrong."
+      render :new
     end
   end
 
