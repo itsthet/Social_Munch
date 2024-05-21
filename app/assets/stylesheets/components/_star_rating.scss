@@ -1,0 +1,17 @@
+
+.star-rating .star-filled {
+  color: #f39c12;
+}
+
+
+.star-rating {
+  unicode-bidi: bidi-override;
+  color: #ddd;
+  font-size: 25px;
+  height: 25px;
+  width: 125px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+}

@@ -2,5 +2,6 @@
 <%= simple_form_for [@recipe, @review] do |f| %>
   <%= f.input :rating, collection: (1..5).to_a, label: "Rate this recipe",  input_html: {data: {controller: "star-rating"}}%>
   <%= f.input :comment %>
+  <%= f.input :image, as: :file, label: "Upload an image" %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>
