@@ -13,7 +13,17 @@
     <p>Cooking Time: <%= @recipe.cooking_time %> minutes</p>
     <p>Servings: <%= @recipe.servings %></p>
     <p>Difficulty: <%= @recipe.difficulty %></p>
-    <p>Ratings: <%= @recipe.ratings %></p>
+    <p>Ratings: <span class="star-rating">
+        <% (1..5).each do |i| %>
+          <% if i <= @recipe.average_rating %>
+            <span class="bi bi-star-fill star-filled"></span>
+          <% else %>
+            <span class="bi bi-star"></span>
+          <% end %>
+        <% end %>
+      </span>
+    </p>
+
     <%= link_to "Back to All Recipes", recipes_path, class: "btn btn-secondary" %>
   </div>
 
@@ -93,15 +103,7 @@
 <div class="actions">
     <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
 </div>
-<div class="rating-card">
-  <h1>Rate this Recipe</h1>
-  <br />
-  <span onclick="gfg(1)" class="star">★</span>
-  <span onclick="gfg(2)" class="star">★</span>
-  <span onclick="gfg(3)" class="star">★</span>
-  <span onclick="gfg(4)" class="star">★</span>
-  <span onclick="gfg(5)" class="star">★</span>
-</div>
+
 
 <script src="review.js"></script>
 
