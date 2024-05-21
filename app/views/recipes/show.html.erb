@@ -23,6 +23,8 @@
         <% end %>
       </span>
     </p>
+     <p>Wine Pairings: <%= @recipe.paired_wines %></p>
+     <p><%= @recipe.pairing_text %></p>
 
     <%= link_to "Back to All Recipes", recipes_path, class: "btn btn-secondary" %>
   </div>
@@ -104,8 +106,6 @@
     <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
 </div>
 
-
-<script src="review.js"></script>
 
 <div class="reviews">
   <p><strong>All Reviews</strong></p>

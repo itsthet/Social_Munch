@@ -195,14 +195,32 @@ end
   dietary_requirements << 'GF' if recipe['glutenFree']
   dietary_requirements << 'DF' if recipe['dairyFree']
 
-image_url = recipe['image']
-p image_url
-file = URI.open(image_url)
+  # Extract relevant recipe information
+  title = recipe['title']
+  servings = recipe['servings']
+  cooking_time = recipe['readyInMinutes']
+  ingredients = recipe['extendedIngredients'].map { |ingredient| ingredient['name'] }.join(', ')
+
+  # Fetch wine pairing information
+  wine_pairing_url = "https://api.spoonacular.com/food/wine/pairing?food=#{title}&apiKey=#{api_key}"
+  wine_pairing_serialized = URI.open(wine_pairing_url).read
+  wine_pairing_data = JSON.parse(wine_pairing_serialized)
+
+  # Extract wine pairing information
+  paired_wines = wine_pairing_data['pairedWines'] ? wine_pairing_data['pairedWines'].join(', ') : ""
+  pairing_text = wine_pairing_data['pairingText']
+
+
+
+
+  image_url = recipe['image']
+  p image_url
+  file = URI.open(image_url)
 
   new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'],
-  ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '), calories: calories, protein: protein, fat: fat)
+  ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '), calories: calories, protein: protein, fat: fat, paired_wines: paired_wines, pairing_text: pairing_text)
 
-new_recipe.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
-new_recipe.save!
+  new_recipe.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+  new_recipe.save!
 
 end
