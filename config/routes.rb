@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :favourites, only: [:create]
 
   end
+  resources :chatrooms, only: [:index, :show, :new, :create]
   resources :favourites, only: [:destroy]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
 

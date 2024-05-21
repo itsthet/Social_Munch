@@ -1,0 +1,10 @@
+<h3>Create a Chat</h3>
+<%= simple_form_for @chatroom do |f| %>
+  <div class="field">
+    <%= f.input :name, label: 'Chatroom Name' %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, 'Create Chatroom' %>
+  </div>
+<% end %>
