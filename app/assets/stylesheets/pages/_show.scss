@@ -177,17 +177,21 @@
     }
 
     #star-container {
-      display: inline-block; // Ensure stars are in a horizontal row
+      display: inline-block;
     }
 
     .star {
-      cursor: pointer; // Pointer cursor to indicate they are clickable
-      font-size: 24px; // Adjust size as needed
-      margin-right: 5px; // Adjust spacing between stars
+      cursor: pointer;
+      font-size: 24px;
+      margin-right: 5px;
     }
   }
 
 .actions {
   margin-left: 30px;
+}
 
+.recipe-link {
+  color: black;
+  text-decoration: none;
 }
