@@ -171,6 +171,17 @@ recipes_serialized = URI.open(recipe_url_with_key).read
 
 # Parse the JSON response
 recipe = JSON.parse(recipes_serialized)
+
+# Extract calories, protein, and fat using regular expressions
+calories = recipe.dig('summary')&.match(/(\d+)\s*calories/i)&.captures&.first
+protein = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*protein/i)&.captures&.first
+fat = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*fat/i)&.captures&.first
+
+# Convert extracted values to integers
+calories = calories.to_i if calories
+protein = protein.to_i if protein
+fat = fat.to_i if fat
+
 ingredients = ''
 
 recipe['extendedIngredients'].each do |ingredient|
@@ -187,8 +198,9 @@ end
 image_url = recipe['image']
 p image_url
 file = URI.open(image_url)
-new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'],
-ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '))
+
+  new_recipe = Recipe.new(name: recipe['title'], servings: recipe['servings'], cooking_time: recipe['readyInMinutes'],
+  ingredients: ingredients, dietary_requirements: dietary_requirements.join(', '), calories: calories, protein: protein, fat: fat)
 
 new_recipe.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 new_recipe.save!

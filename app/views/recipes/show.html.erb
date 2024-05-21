@@ -27,19 +27,19 @@
         <td>
           <div class="category-box">
             <div class="category-name">Calories</div>
-            <div class="category-amount"></div>
+            <div class="category-amount"><%= @recipe.calories %>kcal</div>
           </div>
         </td>
         <td>
           <div class="category-box">
             <div class="category-name">Fat</div>
-            <div class="category-amount"></div>
+            <div class="category-amount"><%= @recipe.fat  %>g</div>
           </div>
         </td>
         <td>
           <div class="category-box">
             <div class="category-name">Protein</div>
-            <div class="category-amount"> <%= @recipe.protein %></div>
+            <div class="category-amount"><%= @recipe.protein %>g</div>
           </div>
         </td>
         <td>
@@ -82,7 +82,7 @@
   <div class="right-column">
     <h2>Method</h2>
     <ol>
-     <% @recipe.method.split('-').reject(&:blank?).each_with_index do |method,index| %>
+     <% @recipe.method.split(/\d+\./).reject(&:blank?).each_with_index do |method,index| %>
     <li><%= index + 1 %>- <%= method.strip %></li>
      <hr class=method-divider>
      <% end %>
