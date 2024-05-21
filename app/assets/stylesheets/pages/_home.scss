@@ -220,6 +220,18 @@
 
 
 // BELOW ARE POPULAR RECIPES DIV PARTS //
+.home-image {
+  height: 200px;
+  width:200px;
+  object-fit: cover;
+  align-items: center;
+}
+
+.recipe-name {
+  color: black;
+  text-decoration: none;
+  font-family:'Crimson Text';
+}
 
 .popular-recipe-batch h2 {
   margin: 60px;
@@ -239,19 +251,20 @@
   overflow: hidden;
   background: #D0E7DF;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
 
-.popular-recipe > img {
-  height: 200px;
-  width: 230px;
-  // object-fit: cover;
-}
+// .popular-recipe > img {
+//   height: 200px;
+//   width: 230px;
+//   align-items: center;
+// }
 
 .popular-recipe h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-  // text-align: center;
+  align-items: center;
   justify-content: start
 }
 
