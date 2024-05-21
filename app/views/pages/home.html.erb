@@ -1,6 +1,5 @@
 <div class="banner">
 
-
   <div class="banner-buttons">
 
     <%#= link_to "Dashboard", dashboard_path, class: "button" %>
@@ -12,8 +11,8 @@
 
 
 
-<div class="search-bar">
-    <div class="h2"> Enter Your Ingredients<br> and See the Magic
+<div class="search-bar" data-controller="typedjs">
+    <div class="h2"> Enter Your Ingredients and See the Magic
 
     </div>
 
@@ -23,15 +22,22 @@
 
       <div class="search-box">
         <%= form_tag(recipes_path, method: :get) do %>
-          <%= text_field_tag :ingredients, nil, placeholder: "Type your ingredients" %>
+          <%= text_field_tag :ingredients, nil, data: {typedjs_target: "input"}%>
           <%= submit_tag "Search", class: "search-button" %>
         <% end %>
 
-    </div>
-    </div>
-    <div class="logo">
-        <%= image_tag "logo1.jpg"%>
-    </div>
+      </div>
+      </div>
+
+      <div class="all-recipes">
+        <%= link_to 'All Recipes', recipes_path, class: 'button' %>
+      </div>
+
+      <div class="logo">
+          <%= image_tag "logo1.jpg"%>
+      </div>
+
+
   </div>
 
 

@@ -7,6 +7,7 @@ class FavouritesController < ApplicationController
   end
 
   def create
+    raise
     @favourite = Favourite.new(recipe: @recipe, user: current_user)
     if @favourite.save
       render json: { message: 'Added to favorites successfully', favourite_id: @favourite.id }, status: :created
