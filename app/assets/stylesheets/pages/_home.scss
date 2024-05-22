@@ -130,8 +130,15 @@
 .popular-recipe-batch{
 
   text-align: center;
-  font-family: 'Crimson Text';
+  font-family: 'Crimson Text' !important;
 
+}
+
+.recipe-name {
+  color: black;
+  text-decoration: none;
+  font-family: 'Crimson Text';
+  font-size: 20px;
 }
 .popular-recipe {
   background-color: rgb(154, 218, 169);
@@ -140,6 +147,11 @@
   margin-left: 100px;
   width: 350px !important;
   height: 350px !important;
+
+}
+
+.home-image {
+  border-radius: 8px;
 }
 
 .feeling-confident {

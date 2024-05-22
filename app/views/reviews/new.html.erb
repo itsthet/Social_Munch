@@ -2,7 +2,7 @@
   <h3>Add a review for <%= @recipe.name %></h3>
   <%= simple_form_for [@recipe, @review], html: { class: "review-form" } do |f| %>
     <div class="form-group">
-      <%= f.label :rating, "Rate this recipe" %>
+      <%# <%= f.label :rating, "Rate this recipe" %>
       <%= f.input :rating, collection: (1..5).to_a, input_html: { data: { controller: "star-rating" }, class: "form-control" } %>
     </div>
     <div class="form-group">
