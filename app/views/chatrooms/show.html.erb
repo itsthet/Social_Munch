@@ -3,7 +3,7 @@
 
   <div class="messages">
     <% @chatroom.messages.each do |message| %>
-      <div class="message" id="message-<%= message.id %>">
+      <div class="message <%= message.user == current_user ? 'sent' : 'received' %>" id="message-<%= message.id %>">
         <small class="message-meta">
           <strong class="message-user"><%= message.user.nickname %></strong>
           <i class="message-time"><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
@@ -12,6 +12,8 @@
       </div>
     <% end %>
   </div>
+
+
 
   <%= simple_form_for [@chatroom, @message], html: { class: "message-form" } do |f| %>
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", input_html: { class: "message-input" } %>
