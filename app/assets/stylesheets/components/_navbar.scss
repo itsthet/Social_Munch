@@ -1,9 +1,24 @@
 .navbar-lewagon {
+
+  .container-fluid{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   justify-content: space-between;
-  background: white;
+  background: #17674A;
   a {
     text-decoration: none;
-    color: black;
+    color: white;
+    font-family: 'Crimson Text';
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 60px;
+    color: white;
+    font-family: 'Crimson Text'
   }
 }
 

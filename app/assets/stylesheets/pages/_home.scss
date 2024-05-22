@@ -1,5 +1,7 @@
 // Specific CSS for your home-page
 .container-fluid {
+  margin-bottom: 0px;
+  padding: 0px;
 }
 
 .banner h1{
@@ -46,8 +48,6 @@
 }
 
 .search-bar {
-  margin-left: 30px;
-  margin-right: 30px;
   color: black;
   background-image: image-url('Banner.jpg');
   background-size: cover;
