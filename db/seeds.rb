@@ -163,31 +163,30 @@ recipes = JSON.parse(recipes_serialized)
 recipes["results"].each do |recipe|
   recipe_url = "https://api.spoonacular.com/recipes/#{recipe['id']}/information?includeNutrition=false"
 
-# Append the API key to the URL
-  recipe_url_with_key = "#{recipe_url}&apiKey=#{api_key}"
+  # Append the API key to the URL
+    recipe_url_with_key = "#{recipe_url}&apiKey=#{api_key}"
 
-# Make the HTTP request and read the response
-recipes_serialized = URI.open(recipe_url_with_key).read
+  # Make the HTTP request and read the response
+  recipes_serialized = URI.open(recipe_url_with_key).read
 
-# Parse the JSON response
-recipe = JSON.parse(recipes_serialized)
+  # Parse the JSON response
+  recipe = JSON.parse(recipes_serialized)
 
-# Extract calories, protein, and fat using regular expressions
-calories = recipe.dig('summary')&.match(/(\d+)\s*calories/i)&.captures&.first
-protein = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*protein/i)&.captures&.first
-fat = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*fat/i)&.captures&.first
+  # Extract calories, protein, and fat using regular expressions
+  calories = recipe.dig('summary')&.match(/(\d+)\s*calories/i)&.captures&.first
+  protein = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*protein/i)&.captures&.first
+  fat = recipe.dig('summary')&.match(/(\d+)\s*g\s*of\s*fat/i)&.captures&.first
 
-# Convert extracted values to integers
-calories = calories.to_i if calories
-protein = protein.to_i if protein
-fat = fat.to_i if fat
+  # Convert extracted values to integers
+  calories = calories.to_i if calories
+  protein = protein.to_i if protein
+  fat = fat.to_i if fat
 
-ingredients = ''
+  ingredients = ''
 
-recipe['extendedIngredients'].each do |ingredient|
-  ingredients += "#{ingredient['name']}, "
-  # method += "#{ingredient['original']}, "
-end
+  recipe['extendedIngredients'].each do |ingredient|
+    ingredients += "#{ingredient['name']}, "
+  end
 
   dietary_requirements = []
   dietary_requirements << 'VE' if recipe['vegetarian']
@@ -195,23 +194,10 @@ end
   dietary_requirements << 'GF' if recipe['glutenFree']
   dietary_requirements << 'DF' if recipe['dairyFree']
 
-  # Extract relevant recipe information
-  title = recipe['title']
-  servings = recipe['servings']
-  cooking_time = recipe['readyInMinutes']
-  ingredients = recipe['extendedIngredients'].map { |ingredient| ingredient['name'] }.join(', ')
-
-  # Fetch wine pairing information
-  wine_pairing_url = "https://api.spoonacular.com/food/wine/pairing?food=#{title}&apiKey=#{api_key}"
-  wine_pairing_serialized = URI.open(wine_pairing_url).read
-  wine_pairing_data = JSON.parse(wine_pairing_serialized)
-
   # Extract wine pairing information
-  paired_wines = wine_pairing_data['pairedWines'] ? wine_pairing_data['pairedWines'].join(', ') : ""
-  pairing_text = wine_pairing_data['pairingText']
-
-
-
+  wine_pairing = recipe['winePairing'] || {}
+  paired_wines = wine_pairing['pairedWines'] ? wine_pairing['pairedWines'].join(', ') : ""
+  pairing_text = wine_pairing['pairingText'] || ""
 
   image_url = recipe['image']
   p image_url
