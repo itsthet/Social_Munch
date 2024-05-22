@@ -1,13 +1,32 @@
 <div class="recipe-card">
- <% if @recipe.photo.attached? %>
-          <div class="recipe-image">
-            <%= cl_image_tag(@recipe.photo.key, class: "recipe-images") %>
-          </div>
-        <% else %>
-          <div class="recipe-image">
-            <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
-          </div>
-        <% end %>
+  <% if @recipe.photo.attached? %>
+    <div class="recipe-image">
+      <%= cl_image_tag(@recipe.photo.key, class: "recipe-images") %>
+
+      <div data-controller="heart">
+        <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
+        <div data-heart-target="favouriteId" data-favourite-id="<%= @favourite ? @favourite.id : "" %>">
+          <%= @recipe.favourites.where(user: current_user).count %>
+          <% if @favourite %>
+            <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+          <% else  %>
+            <i class="fa-solid fa-heart text-success" style="font-weight: 100;" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+          <% end %>
+        </div>
+      </div>
+
+
+
+    </div>
+  <% else %>
+    <div class="recipe-image">
+      <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+    </div>
+  <% end %>
+
+
+
+
   <div class="recipe-details">
     <h1><%= @recipe.name %></h1>
     <p>Cooking Time: <%= @recipe.cooking_time %> minutes</p>
@@ -28,6 +47,11 @@
 
     <%= link_to "Back to All Recipes", recipes_path, class: "btn btn-secondary" %>
   </div>
+
+
+
+
+
 
 </div>
 
@@ -121,16 +145,7 @@
   </ul>
 </div>
 
-<div data-controller="heart">
-    <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
-    <div data-heart-target="favouriteId" data-favourite-id="<%= @favourite ? @favourite.id : "" %>">
-    <%= @recipe.favourites.where(user: current_user).count %>
-    <% if @favourite %>
-    <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
-  <% else  %>
-     <i class="fa-solid fa-heart text-success" style="font-weight: 100;" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
-  <% end %>
-</div>
+<%# OIRGINALLY THE HEART WAS HERE, now it's moved to the top %>
 
 <div class="recommended-recipes">
 
