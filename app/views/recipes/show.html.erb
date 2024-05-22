@@ -154,7 +154,7 @@
     <% @recommended_recipes.each do |recommended_recipe| %>
       <div class="recipe">
         <h4><%= link_to recommended_recipe.name, recipe_path(recommended_recipe), class: "recipe-link" %></h4>
-        <p>Dietary Requirements: <%= recommended_recipe.dietary_requirements %></p>
+        <%# <p>Dietary Requirements: <%= recommended_recipe.dietary_requirements %></p>
         <% if recommended_recipe.photo.attached? %>
           <div class="recipe-image">
             <%= link_to recipe_path(recommended_recipe) do %>
