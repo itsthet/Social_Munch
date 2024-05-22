@@ -1,76 +1,63 @@
 .container.chatroom {
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px;
-  border: 1px solid #ddd;
+  background-color: #f8f9fa;
   border-radius: 10px;
-  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   .chatroom-name {
-    font-size: 2rem;
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #343a40;
   }
 
   .messages {
-    margin-bottom: 20px;
-    max-height: 500px;
-    overflow-y: auto;
-    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  .message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    word-wrap: break-word;
+    position: relative;
 
-    .message {
-      margin-bottom: 15px;
-      padding: 10px;
-      background-color: #D0E7DF;
-      border: 1px solid #17674A;
-      border-radius: 5px;
+    .message-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
 
-      .message-meta {
-        display: block;
-        margin-bottom: 5px;
+    .message-user {
+      font-weight: bold;
+      color: #495057;
+    }
 
-        .message-user {
-          font-weight: bold;
-          margin-right: 10px;
-        }
+    .message-time {
+      font-style: italic;
+      color: #868e96;
+    }
 
-        .message-time {
-          color: #6c757d;
-          font-size: 0.9rem;
-        }
-      }
-
-      .message-content {
-        margin-bottom: 0;
-      }
+    .message-content {
+      font-size: 1rem;
+      color: #212529;
     }
   }
 
-  .message-form {
-    display: flex;
-    align-items: flex-end;
+  .sent {
+    align-self: flex-end;
+    background-color: #d1e7dd;
+    color: #0f5132;
+  }
 
-    .message-input {
-      flex-grow: 1;
-      margin-right: 10px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    .message-submit {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
+  .received {
+    align-self: flex-start;
+    background-color: #f8d7da;
+    color: #842029;
   }
 }
