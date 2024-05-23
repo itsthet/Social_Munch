@@ -1,29 +1,24 @@
-
-.content {
-  padding: 0px 150px;
+.container {
+  padding: 0 30px;
 }
+
 .header {
   background-color: #FDF4F4;
 }
-.title {
-  background-color: #FAF4F3 ;
-  font-family: Crimson Text;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-}
 
-.subtitle {
-  background-color: #FAF4F3 ;
+.title, .subtitle  {
+  background-color: #FAF4F3;
   font-family: Crimson Text;
   padding-top: 30px;
-  padding-bottom: 30px;
-  padding-left: 30px;
+  padding-bottom: 15px;
+  padding-left: 60px;
 }
 
 .buttons-container {
-  padding-left: 30px;
+  padding-left: 60px;
 }
+
+
 
 .round-button {
   border-radius: 50%;
@@ -41,46 +36,12 @@
   border: 2px solid black;
 }
 
-.recipe-card {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.recipe-details {
-  flex: 1;
-  padding: 20px;
-}
-
-.recipe-details h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.recipe-card {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.recipe-image {
-  flex: 0 0 200px;
-}
-
-.recipe-image img {
-  width: 300px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 30px;
+  background-color: white;
 }
 
 .recipe-details {
@@ -92,9 +53,36 @@
 .recipe-details h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 25px;
+  font-family: 'Crimson Text';
+}
+
+.recipe-card-2 {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #D0E7DF;
+  margin-left: 30px;
+  margin-right: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.recipe-image {
+  flex: 0 0 200px;
+}
+
+.recipe-image img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 15px;
 }
 
 .dietary-requirements {

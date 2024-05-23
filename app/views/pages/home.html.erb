@@ -27,12 +27,9 @@
     </div>
 
     <div class="all-recipes">
-      <%= link_to 'View All Recipes', recipes_path, class: 'btn btn-secondary my-3' %>
+      <%= link_to 'View All Recipes', recipes_path, class: 'btn btn-secondary my-3', style: 'border-radius: 12px;' %>
     </div>
 
-    <div class="logo">
-      <%= image_tag "logo1.jpg"%>
-    </div>
 
 </div>
 
@@ -60,7 +57,6 @@
         <div class="popular-recipe-info">
           <div>
             <h2><%= link_to popular_recipe.name, recipe_path(popular_recipe), class: "recipe-name" %></h2>
-            <p>Dietary Requirements: <%= popular_recipe.dietary_requirements %></p>
           </div>
         </div>
       </div>

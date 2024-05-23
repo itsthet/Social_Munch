@@ -13,9 +13,9 @@
     <button class="round-button" data-action="click->filter#filter" data-filter-target="button" data-filter="all">All</button>
   </div>
 
-<div class="recipes">
+ <div class="recipes">
   <% @recipes.each do |recipe| %>
-    <div class="recipe-card" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
+    <div class="recipe-card-2" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
       <div class="recipe-image">
         <%= link_to recipe_path(recipe) do %>
           <% if recipe.photo.attached? %>
@@ -27,16 +27,25 @@
       </div>
       <div class="recipe-details">
         <h3><%= recipe.name %></h3>
-        <p>Ratings: <span class="star-rating">
-          <% (1..5).each do |i| %>
-            <% if i <= recipe.average_rating.ceil %>
-              <span class="bi bi-star-fill star-filled"></span>
-            <% else %>
-              <span class="bi bi-star"></span>
+        <p>
+          <span class="star-rating">
+            <% (1..5).each do |i| %>
+              <% if i <= recipe.average_rating.ceil %>
+                <span class="bi bi-star-fill star-filled"></span>
+              <% else %>
+                <span class="bi bi-star"></span>
+              <% end %>
             <% end %>
-          <% end %>
-        </span></p>
-        <p class="dietary-requirements">Dietary Requirements: <%= recipe.dietary_requirements %></p>
+          </span>
+        </p>
+        <% if recipe.cooking_time.present? %>
+          <p>
+            <i class="fas fa-clock"></i> <%= recipe.cooking_time %> minutes
+          </p>
+        <% end %>
+        <p class="dietary-requirements">
+          Dietary Requirements: <%= recipe.dietary_requirements %>
+        </p>
       </div>
     </div>
   <% end %>
