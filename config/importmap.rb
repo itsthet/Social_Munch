@@ -12,3 +12,4 @@ pin "typed.js" # @2.1.0
 
 pin "star-rating.js" # @4.3.1
 
+pin "@rails/actioncable", to: "@rails--actioncable.js" # @7.0.8

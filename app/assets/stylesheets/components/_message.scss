@@ -1,0 +1,53 @@
+// _message.scss
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 70%;
+  word-wrap: break-word;
+  display: flex; /* Ensure messages are displayed as flex containers */
+  flex-direction: column; /* Stack message content vertically */
+
+  .message-meta {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+
+    .message-user {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .message-time {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+  }
+
+  .message-content {
+    margin-bottom: 0;
+  }
+
+  &.sent {
+    align-self: flex-end; /* Align sent messages to the right */
+    background-color: #D0E7DF;
+    border: 1px solid #17674A;
+    color: #17674A;
+
+    .message-meta {
+      justify-content: flex-end; /* Align user and time to the right */
+    }
+  }
+
+  &.received {
+    align-self: flex-start; /* Align received messages to the left */
+    background-color: #F8D7DA;
+    border: 1px solid #842029;
+    color: #842029;
+
+    .message-meta {
+      justify-content: flex-start; /* Align user and time to the left */
+    }
+  }
+}
