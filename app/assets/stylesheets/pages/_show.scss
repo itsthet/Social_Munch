@@ -1,13 +1,15 @@
   .recipe-card {
+    margin-top: 24px;
     display: flex;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 24px;
     background-color: #D0E7DF;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 120px;
+    margin-right: 120px;
     align-items: flex-end;  /* wed change */
+    justify-content: space-around;
 
 
 
@@ -15,15 +17,16 @@
       display: flex;
       flex-direction: column;
       align-items: end;
-    }
 
-    i {
-      margin-right: 15px;
-      padding-right: 30px;
+      img {
+        max-width: 600px;
+        height: 500px;
+        border-radius: 9%;
     }
+  }
 
     .details-nutrition {
-      margin-left: 200px;
+
     }
 
 
@@ -38,34 +41,18 @@
       height: 500px;
       object-fit: cover;
 
-
-      img {
-        max-width: 600px;
-        height: 500px;
-        border-radius: 12px;
-      }
     }
-
-    .heart-section {
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-
-
-      i.fa-heart {
-        font-size: 32px;
-        color: red;
-        cursor: pointer;
-      }
-    }
-
 
 
     .recipe-details {
       margin-left: 10px;
-      margin-right: 50px;
       // padding: 70px;
 
+      .name-and-heart {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
 
 
@@ -96,9 +83,9 @@
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
-    margin-top: 50px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-top: 30px;
+    margin-left: 120px;
+    margin-right: 120px;
     background-color: #FAF4F3;
     font-family: 'Crimson Text';
     font-size: 20px;
@@ -161,6 +148,7 @@
           border: 1px solid #ccc;
           border-radius: 5px;
           font-family: 'Crimson Text';
+          margin-right: 8px;
         }
 
         /* Adjust margin between columns */
@@ -214,7 +202,17 @@
   }
 
 .actions {
-  margin-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+  margin-top: 12px;
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .recipe-link {
@@ -224,10 +222,34 @@
 
 
 .reviews {
-  padding-left: 30px; /* wed change */
+  margin-right: 120px;
+  margin-left: 120px;
+  margin-top: 30px;
 }
+
 
 
 .reccomende-recipes {
   margin: 0 30px;
+}
+
+.text-success {
+  color: #e8282c !important;
+  font-size: 40px !important;
+}
+
+
+.recommended-recipes {
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 70px;
+  margin-bottom: 200px;
+}
+
+.recommeded-recipes-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+
 }

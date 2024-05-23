@@ -1,10 +1,6 @@
 <div class="recipe-card">
-
-  <div>
-
+  <div class="recipe-card-image">
     <%#= link_to "All Recipes", recipes_path, class: "btn btn-secondary" %> <%#= change 1  %>
-
-
     <% if @recipe.photo.attached? %>
       <div class="recipe-image">
         <%= cl_image_tag(@recipe.photo.key, class: "recipe-images") %>
@@ -14,29 +10,24 @@
         <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
       </div>
     <% end %>
-
   </div>
-
-
-
-
-  <div data-controller="heart" style="margin-bottom: 30px">
-    <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
-    <div data-heart-target="favouriteId" data-favourite-id="<%= @favourite ? @favourite.id : "" %>">
-      <%= @recipe.favourites.where(user: current_user).count %>
-      <% if @favourite %>
-        <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
-      <% else  %>
-      <i class="fa-solid fa-heart text-success" style="font-weight: 100;" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
-      <% end %>
-    </div>
-  </div>
-
 
   <div class="details-nutrition">
-
     <div class="recipe-details">
-      <h1><%= @recipe.name %></h1>
+      <div class="name-and-heart">
+        <h1><%= @recipe.name %></h1>
+          <div data-controller="heart" class="heart-like-icon">
+            <div data-heart-target="recipeId" data-recipe-id="<%= @recipe.id %>" hidden></div>
+            <div data-heart-target="favouriteId" data-favourite-id="<%= @favourite ? @favourite.id : "" %>">
+              <%#= @recipe.favourites.where(user: current_user).count %>
+              <% if @favourite %>
+                <i class="fa-solid fa-heart text-success" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+              <% else  %>
+              <i class="fa-solid fa-heart text-success" style="font-weight: 100;" id="heartIcon"  data-heart-target="item" data-action="click->heart#send"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
       <p>🕰️: <%= @recipe.cooking_time %> minutes</p>
       <p>Servings: <%= @recipe.servings %></p>
       <p>Difficulty: <%= @recipe.difficulty %></p>
@@ -129,13 +120,14 @@
   </div>
 </div>
 
-<div class="actions">
-    <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
-</div>
-
 
 <div class="reviews">
-  <p><strong>All Reviews</strong></p>
+
+  <div class="actions">
+    <p><strong>All Reviews</strong></p>
+    <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
+  </div>
+
   <ul class="list-group">
     <% @recipe.reviews.each do |review| %>
       <li class="list-group-item">
@@ -151,42 +143,49 @@
 
 
 
-<h3 style="margin-left: 70px;">Recommended Recipes</h3>
 
-<div class="recipes">
-  <% @recommended_recipes.each do |recipe| %>
-    <div class="recipe-card-2" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
-      <div class="recipe-image">
-        <%= link_to recipe_path(recipe) do %>
-          <% if recipe.photo.attached? %>
-            <%= cl_image_tag(recipe.photo.key, class: "recipe-image") %>
-          <% else %>
-            <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="recipe-details">
-        <h3><%= recipe.name %></h3>
-        <p>
-          <span class="star-rating">
-            <% (1..5).each do |i| %>
-              <% if i <= recipe.average_rating.ceil %>
-                <span class="bi bi-star-fill star-filled"></span>
-              <% else %>
-                <span class="bi bi-star"></span>
-              <% end %>
+
+<div class="recommended-recipes">
+  <h3>Recommended Recipes</h3>
+
+  <div class="recommeded-recipes-container">
+
+
+
+    <% @recommended_recipes.each do |recipe| %>
+      <div class="recipe-card-2" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
+        <div class="recipe-image">
+          <%= link_to recipe_path(recipe) do %>
+            <% if recipe.photo.attached? %>
+              <%= cl_image_tag(recipe.photo.key, class: "recipe-image") %>
+            <% else %>
+              <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
             <% end %>
-          </span>
-        </p>
-        <% if recipe.cooking_time.present? %>
+          <% end %>
+        </div>
+        <div class="recipe-details">
+          <h3><%= recipe.name %></h3>
           <p>
-            <i class="fas fa-clock"></i> <%= recipe.cooking_time %> minutes
+            <span class="star-rating">
+              <% (1..5).each do |i| %>
+                <% if i <= recipe.average_rating.ceil %>
+                  <span class="bi bi-star-fill star-filled"></span>
+                <% else %>
+                  <span class="bi bi-star"></span>
+                <% end %>
+              <% end %>
+            </span>
           </p>
-        <% end %>
-        <p class="dietary-requirements">
-          Dietary Requirements: <%= recipe.dietary_requirements %>
-        </p>
+          <% if recipe.cooking_time.present? %>
+            <p>
+              <i class="fas fa-clock"></i> <%= recipe.cooking_time %> minutes
+            </p>
+          <% end %>
+          <p class="dietary-requirements">
+            Dietary Requirements: <%= recipe.dietary_requirements %>
+          </p>
 
+        </div>
       </div>
     <% end %>
   </div>
