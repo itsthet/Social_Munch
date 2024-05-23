@@ -37,7 +37,9 @@
 
     <div class="recipe-details">
       <h1><%= @recipe.name %></h1>
-      <p>🕰️: <%= @recipe.cooking_time %> minutes</p>
+      <p class="cooking-time">
+        <i class="fa-regular fa-clock"></i><%= @recipe.cooking_time %> minutes
+      </p>
       <p>Servings: <%= @recipe.servings %></p>
       <p>Difficulty: <%= @recipe.difficulty %></p>
       <p>Ratings: <span class="star-rating">
@@ -178,7 +180,7 @@
         </p>
         <% if recipe.cooking_time.present? %>
           <p>
-            <i class="fas fa-clock"></i> <%= recipe.cooking_time %> minutes
+            <i class="fa-regular fa-clock"></i> <%= recipe.cooking_time %> minutes
           </p>
         <% end %>
         <p class="dietary-requirements">
