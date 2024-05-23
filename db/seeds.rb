@@ -13,6 +13,7 @@ user3 = User.create(email: "gabriel@gabriel.com", password: "123456", nickname: 
 
 
 puts "Creating recipes..."
+require 'open-uri'
 
 file = URI.open("https://upload.wikimedia.org/wikipedia/commons/3/33/Espaguetis_carbonara.jpg")
 recipe_1 = Recipe.create(
@@ -23,8 +24,17 @@ recipe_1 = Recipe.create(
   servings: 2,
   difficulty: "Medium",
   method: "1. Cook spaghetti until al dente. 2. Fry pancetta until crisp. 3. Whisk eggs with Parmesan. 4. Toss cooked pasta in egg mixture.",
+  paired_wines: "Chardonnay",
+  pairing_text: "Chardonnay's buttery texture complements the creamy sauce of the Carbonara.",
+  calories: 500,
+  fat: 20,
+  protein: 25,
+  carbs: 50,
+  fiber: 3,
+  sugar: 2
+
 )
-recipe_1.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_1.photo.attach(io: file, filename: "carbonara.jpg", content_type: "image/jpg")
 recipe_1.save
 
 file = URI.open("https://www.recipesmadeeasy.co.uk/wp-content/uploads/2019/10/spicy-beef-tacos-4.jpg")
@@ -35,9 +45,17 @@ recipe_2 = Recipe.create(
   cooking_time: 25,
   servings: 4,
   difficulty: "Easy",
-  method: "1. Brown ground beef and season with taco seasoning. 2. Warm tortillas in a skillet. 3. Assemble tacos with beef and toppings. 4. Serve with salsa, sour cream, and lime wedges."
+  method: "1. Brown ground beef and season with taco seasoning. 2. Warm tortillas in a skillet. 3. Assemble tacos with beef and toppings. 4. Serve with salsa, sour cream, and lime wedges.",
+  paired_wines: "Zinfandel",
+  pairing_text: "Zinfandel's bold flavors and spiciness match well with the seasoned beef.",
+  calories: 600,
+  fat: 30,
+  protein: 35,
+  carbs: 45,
+  fiber: 5,
+  sugar: 6
 )
-recipe_2.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_2.photo.attach(io: file, filename: "tacos.jpg", content_type: "image/jpg")
 recipe_2.save
 
 file = URI.open("https://img.freepik.com/premium-photo/savory-beef-vegetable-stirfry-generative-ai_147933-1369.jpg")
@@ -49,8 +67,17 @@ recipe_3 = Recipe.create(
   servings: 2,
   difficulty: "Medium",
   method: "1. Marinate beef strips in soy sauce, garlic, and ginger. 2. Stir-fry vegetables until tender-crisp. 3. Cook beef until browned. 4. Add sauce and simmer. 5. Combine with vegetables.",
+  paired_wines: "Merlot",
+  pairing_text: "Merlot's softness and roundness complement the savory and slightly sweet flavors of the stir fry.",
+  calories: 450,
+  fat: 15,
+  protein: 30,
+  carbs: 50,
+  fiber: 4,
+  sugar: 8,
+  dietary_requirements: "DF"
 )
-recipe_3.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_3.photo.attach(io: file, filename: "stirfry.jpg", content_type: "image/jpg")
 recipe_3.save
 
 file = URI.open("https://www.acouplecooks.com/wp-content/uploads/2022/10/Margherita-Pizza-093.jpg")
@@ -62,8 +89,17 @@ recipe_4 = Recipe.create(
   servings: 2,
   difficulty: "Easy",
   method: "1. Roll out pizza dough. 2. Spread sauce and top with cheese and basil. 3. Bake until crust is golden and cheese is bubbly.",
+  paired_wines: "Sangiovese",
+  pairing_text: "Sangiovese's high acidity and bright cherry flavors are perfect with the tomato sauce.",
+  calories: 400,
+  fat: 18,
+  protein: 20,
+  carbs: 40,
+  fiber: 2,
+  sugar: 4
+
 )
-recipe_4.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_4.photo.attach(io: file, filename: "margherita_pizza.jpg", content_type: "image/jpg")
 recipe_4.save
 
 file = URI.open("https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/07/Garlic-Grilled-Shrimp-Skewers-7.jpg")
@@ -75,8 +111,17 @@ recipe_5 = Recipe.create(
   servings: 2,
   difficulty: "Easy",
   method: "1. Sauté garlic in butter. 2. Add shrimp and cook until pink. 3. Deglaze with lemon juice. 4. Season with salt, pepper, and parsley.",
+  paired_wines: "Sauvignon Blanc",
+  pairing_text: "Sauvignon Blanc's citrusy and herbal notes enhance the lemon-garlic flavor.",
+  calories: 200,
+  fat: 10,
+  protein: 25,
+  carbs: 5,
+  fiber: 0,
+  sugar: 1,
+  dietary_requirements: "GF, DF"
 )
-recipe_5.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_5.photo.attach(io: file, filename: "lemon_garlic_shrimp.jpg", content_type: "image/jpg")
 recipe_5.save
 
 file = URI.open("https://food-images.files.bbci.co.uk/food/recipes/hearty_vegetable_soup_14365_16x9.jpg")
@@ -88,8 +133,17 @@ recipe_6 = Recipe.create(
   servings: 4,
   difficulty: "Easy",
   method: "1. Sauté vegetables until softened. 2. Add broth, garlic, thyme, and bay leaf. 3. Simmer until vegetables are tender. 4. Season to taste.",
+  paired_wines: "Chardonnay",
+  pairing_text: "Chardonnay's creamy texture and light oak flavors match well with the soup.",
+  calories: 150,
+  fat: 5,
+  protein: 5,
+  carbs: 20,
+  fiber: 5,
+  sugar: 6,
+  dietary_requirements: "VE, VG, GF, DF"
 )
-recipe_6.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_6.photo.attach(io: file, filename: "vegetable_soup.jpg", content_type: "image/jpg")
 recipe_6.save
 
 file = URI.open("https://www.savoryexperiments.com/wp-content/uploads/2023/11/Chicken-Tenders-21.jpg")
@@ -101,8 +155,16 @@ recipe_7 = Recipe.create(
   servings: 2,
   difficulty: "Easy",
   method: "1. Dip chicken in beaten eggs. 2. Coat with breadcrumb mixture. 3. Bake until golden and crispy.",
+  paired_wines: "Sauvignon Blanc",
+  pairing_text: "Sauvignon Blanc's bright acidity and herbal notes complement the crispy chicken tenders.",
+  calories: 350,
+  fat: 15,
+  protein: 30,
+  carbs: 20,
+  fiber: 1,
+  sugar: 2
 )
-recipe_7.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_7.photo.attach(io: file, filename: "chicken_tenders.jpg", content_type: "image/jpg")
 recipe_7.save
 
 file = URI.open("https://www.cookinwithmima.com/wp-content/uploads/2021/08/Caprese-Salad-2-6.jpg")
@@ -114,8 +176,17 @@ recipe_8 = Recipe.create(
   servings: 2,
   difficulty: "Easy",
   method: "1. Arrange tomato and mozzarella slices on a plate. 2. Drizzle with olive oil and balsamic glaze. 3. Season with salt, pepper, and garnish with basil leaves.",
+  paired_wines: "Pinot Grigio",
+  pairing_text: "Pinot Grigio's light and crisp character pairs well with the fresh ingredients of the salad.",
+  calories: 250,
+  fat: 20,
+  protein: 10,
+  carbs: 10,
+  fiber: 2,
+  sugar: 5,
+  dietary_requirements: "VE, GF"
 )
-recipe_8.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_8.photo.attach(io: file, filename: "caprese_salad.jpg", content_type: "image/jpg")
 recipe_8.save
 
 file = URI.open("https://www.lilvienna.com/wp-content/uploads/Recipe-easy-mushroom-risotto.jpg")
@@ -127,8 +198,17 @@ recipe_9 = Recipe.create(
   servings: 2,
   difficulty: "Medium",
   method: "1. Sauté mushrooms, onion, and garlic. 2. Add rice and cook until translucent. 3. Deglaze with wine. 4. Gradually add broth and stir until creamy. 5. Stir in Parmesan and butter.",
+  paired_wines: "Pinot Noir",
+  pairing_text: "Pinot Noir's earthy flavors and light body complement the creamy and earthy risotto.",
+  calories: 400,
+  fat: 15,
+  protein: 10,
+  carbs: 50,
+  fiber: 3,
+  sugar: 4,
+  dietary_requirements: "VE"
 )
-recipe_9.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_9.photo.attach(io: file, filename: "mushroom_risotto.jpg", content_type: "image/jpg")
 recipe_9.save
 
 file = URI.open("https://thescranline.com/wp-content/uploads/2023/09/FLUFFY-PANCAKES-S-01.jpg")
@@ -140,9 +220,19 @@ recipe_10 = Recipe.create(
   servings: 2,
   difficulty: "Easy",
   method: "1. Mix dry ingredients. 2. Add wet ingredients and whisk until smooth. 3. Cook on a hot griddle until golden. 4. Serve with butter and maple syrup.",
+  paired_wines: "Prosecco",
+  pairing_text: "Prosecco's light bubbles and hint of sweetness enhance the flavor of the pancakes.",
+  calories: 300,
+  fat: 10,
+  protein: 6,
+  carbs: 50,
+  fiber: 2,
+  sugar: 12,
+  dietary_requirements: "VE"
 )
-recipe_10.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
+recipe_10.photo.attach(io: file, filename: "fluffy_pancakes.jpg", content_type: "image/jpg")
 recipe_10.save
+
 
 
 
