@@ -52,9 +52,11 @@
             <i class="fa-regular fa-clock"></i> <%= recipe.cooking_time %> minutes
           </p>
         <% end %>
-        <p class="dietary-requirements">
-          Dietary Requirements: <%= recipe.dietary_requirements %>
-        </p>
+     <% if recipe.dietary_requirements.present? %>
+       <p class="dietary-requirements">
+    Dietary Requirements: <%= recipe.dietary_requirements %>
+  </p>
+<% end %>
       </div>
     </div>
   <% end %>
