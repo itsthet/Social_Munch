@@ -1,3 +1,5 @@
+// chatroom.scss
+
 .container.chatroom {
   max-width: 800px;
   margin: 0 auto;
@@ -17,18 +19,22 @@
     max-height: 500px;
     overflow-y: auto;
     padding-right: 10px;
-
+    display: flex; /* Ensure .messages container is a flex container */
+    flex-direction: column; /* Stack messages vertically */
 
     .message {
       margin-bottom: 15px;
       padding: 10px;
-      background-color: #D0E7DF;
-      border: 1px solid #17674A;
       border-radius: 5px;
+      max-width: 70%;
+      word-wrap: break-word;
+      display: flex; /* Ensure messages are displayed as flex containers */
+      flex-direction: column; /* Stack message content vertically */
 
       .message-meta {
-        display: block;
         margin-bottom: 5px;
+        display: flex;
+        align-items: center;
 
         .message-user {
           font-weight: bold;
@@ -36,8 +42,8 @@
         }
 
         .message-time {
-          color: #6c757d;
           font-size: 0.9rem;
+          color: #6c757d;
         }
       }
 
@@ -50,6 +56,7 @@
   .message-form {
     display: flex;
     align-items: flex-end;
+    margin-top: 20px;
 
     .message-input {
       flex-grow: 1;
@@ -60,6 +67,8 @@
     }
 
     .message-submit {
+      min-width: 80px;
+      align-self: flex-end;
       padding: 10px 20px;
       background-color: #007bff;
       color: #fff;
