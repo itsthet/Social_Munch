@@ -4,14 +4,26 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #c0dccf;
+
+ form {
+  background-color: #FAF4F3;
+ }
+
+ h3 {
+  font-family: 'Crimson Text';
+ }
 }
 
 .form-group {
   margin-bottom: 20px;
+  background-color: #FAF4F3;
+
 }
 
 .form-group label {
   font-weight: bold;
+  font-family: 'Crimson Text';
 }
 
 .form-control {
@@ -20,6 +32,7 @@
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-family: 'Crimson Text';
 }
 
 .btn-primary {
@@ -29,6 +42,7 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Crimson Text';
 }
 
 .btn-primary:hover {
