@@ -17,14 +17,16 @@
     </div>
 
 
-    <div class="search-container">
-        <div class="search-box">
-          <%= form_tag(recipes_path, method: :get) do %>
-            <%= text_field_tag :ingredients, nil, data: {typedjs_target: "input"}, placeholder:"Type Your Ingredients"%>
-            <%= submit_tag "Search", class: "search-button" %>
-          <% end %>
-        </div>
-    </div>
+  <div class="search-container">
+  <div class="search-box">
+    <%= form_tag(recipes_path, method: :get, class: 'search-form') do %>
+      <%= text_field_tag :ingredients, nil, data: { typedjs_target: "input" }, placeholder: "Type Your Ingredients", class: 'search-input' %>
+      <%= button_tag type: 'submit', class: 'search-button' do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
     <div class="all-recipes">
       <%= link_to 'View All Recipes', recipes_path, class: 'btn btn-secondary my-3', style: 'border-radius: 12px;' %>
