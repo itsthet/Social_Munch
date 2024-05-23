@@ -4,6 +4,7 @@
 
 .header {
   background-color: #ede1e7;
+  font-family: 'Crimson Text';
 }
 
 .title {
@@ -11,11 +12,20 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  font-family: 'Crimson Text';
+  h1 {
+    font-family: 'Crimson Text';
+  }
+
+}
+
+h1 {
+  font-family: 'Crimson Text';
 }
 
 .title, .subtitle  {
   background-color: #ede1e7;
-  font-family: Crimson Text;
+  font-family:'Crimson Text';
   padding-top: 30px;
   padding-bottom: 15px;
   padding-left: 60px;
