@@ -132,28 +132,26 @@
   <% end %>
 </div>
 
-<div class="recommended-recipes">
-
-  <h3>Recommended Recipes</h3>
-  <div class="recipes">
-    <% @recommended_recipes.each do |recommended_recipe| %>
-      <div class="recipe">
-        <h4><%= link_to recommended_recipe.name, recipe_path(recommended_recipe), class: "recipe-link" %></h4>
-        <p>Dietary Requirements: <%= recommended_recipe.dietary_requirements %></p>
+<h3>Recommended Recipes</h3>
+<div class="recipes">
+  <% @recommended_recipes.each do |recommended_recipe| %>
+    <div class="card recipe-card">
+      <div class="card-body">
+        <h4 class="card-title"><%= link_to recommended_recipe.name, recipe_path(recommended_recipe), class: "recipe-link" %></h4>
         <% if recommended_recipe.photo.attached? %>
           <div class="recipe-image">
             <%= link_to recipe_path(recommended_recipe) do %>
-              <%= cl_image_tag(recommended_recipe.photo.key, class: "recipe_images") %>
+              <%= cl_image_tag(recommended_recipe.photo.key, class: "card-img-top recipe-image") %>
             <% end %>
           </div>
         <% else %>
           <div class="recipe-image">
             <%= link_to recipe_path(recommended_recipe) do %>
-              <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+              <%= image_tag 'gnocchi.jpeg', class: "card-img-top recipe-image" %>
             <% end %>
           </div>
         <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
