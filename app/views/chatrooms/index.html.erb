@@ -1,4 +1,5 @@
-<h1>Chatrooms</h1>
+<div class="rooms">
+<h1>BiteChat</h1>
 
 <p>
   <%= link_to 'New Chatroom', new_chatroom_path, class: 'btn btn-primary' %>
@@ -10,6 +11,7 @@
       <h2 class="chatroom-name"><%= link_to chatroom.name, chatroom_path(chatroom) %></h2>
     </div>
   <% end %>
+</div>
 </div>
 
 <style>
@@ -50,6 +52,15 @@
     text-decoration: none;
 
   }
+
+  .rooms{
+  background-image: image-url('pink.jpg'); /* Replace with the path to your image */
+  background-size: cover; /* Adjusts the background image to cover the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Ensures the background image is not repeated */
+  margin: 0;
+  padding: 0;
+}
 
 
 </style>

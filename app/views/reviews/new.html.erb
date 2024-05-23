@@ -1,3 +1,4 @@
+<div class="pink-background">
 <div class="review-form">
   <h3>Add a review for <%= @recipe.name %></h3>
   <%= simple_form_for [@recipe, @review], html: { class: "review-form" } do |f| %>
@@ -15,4 +16,5 @@
     </div>
     <%= f.submit "Submit review", class: "btn btn-primary" %>
   <% end %>
+</div>
 </div>
