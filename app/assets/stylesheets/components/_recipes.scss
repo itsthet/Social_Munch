@@ -6,6 +6,13 @@
   background-color: #FDF4F4;
 }
 
+.title {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .title, .subtitle  {
   background-color: #FAF4F3;
   font-family: Crimson Text;
@@ -16,6 +23,8 @@
 
 .buttons-container {
   padding-left: 60px;
+  background-color: #FAF4F3;
+
 }
 
 

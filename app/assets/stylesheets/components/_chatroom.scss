@@ -1,3 +1,5 @@
+// chatroom.scss
+
 .container.chatroom {
   max-width: 800px;
   margin: auto;
@@ -14,50 +16,71 @@
   }
 
   .messages {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+    margin-bottom: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+    display: flex; /* Ensure .messages container is a flex container */
+    flex-direction: column; /* Stack messages vertically */
 
-  .message {
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 60%;
-    word-wrap: break-word;
-    position: relative;
+    .message {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 70%;
+      word-wrap: break-word;
+      display: flex; /* Ensure messages are displayed as flex containers */
+      flex-direction: column; /* Stack message content vertically */
 
-    .message-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      margin-bottom: 5px;
-    }
-
-    .message-user {
-      font-weight: bold;
-      color: #495057;
-    }
+      .message-meta {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
 
     .message-time {
       font-style: italic;
       color: #868e96;
     }
 
-    .message-content {
-      font-size: 1rem;
-      color: #212529;
+        .message-time {
+          font-size: 0.9rem;
+          color: #6c757d;
+        }
+      }
+
+      .message-content {
+        margin-bottom: 0;
+      }
     }
   }
 
-  .sent {
-    align-self: flex-end;
-    background-color: #d1e7dd;
-    color: #0f5132;
-  }
+  .message-form {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
 
-  .received {
-    align-self: flex-start;
-    background-color: #f8d7da;
-    color: #842029;
+    .message-input {
+      flex-grow: 1;
+      margin-right: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .message-submit {
+      min-width: 80px;
+      align-self: flex-end;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
   }
 }

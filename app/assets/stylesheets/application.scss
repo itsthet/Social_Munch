@@ -14,5 +14,10 @@
 @import 'components/star_rating';
 @import 'components/_review_image';
 @import 'components/chatroom';
+@import 'components/message';
+
+.hidden {
+  display: none;
+}
 @import 'components/review_form';
 @import 'components/filters.scss';
