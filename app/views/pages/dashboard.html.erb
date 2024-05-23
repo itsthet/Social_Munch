@@ -1,4 +1,4 @@
-<h2 class="dashboard-title">My Favourite Recipes</h2>
+<h2 class="dashboard-title" style="margin-left: 60px";>My Favourite Recipes</h2>
 <div class="dashboard-content">
   <% if @favourite_recipes.present? %>
     <div class="recipes">
@@ -34,9 +34,6 @@
             <p class="dietary-requirements">
               Dietary Requirements: <%= recipe.dietary_requirements %>
             </p>
-            <div class="recipe-actions">
-              <%= link_to 'Remove from Favourites', recipe_path(recipe),remote: true, method: :delete, class: "btn btn-danger" %>
-            </div>
           </div>
         </div>
       <% end %>
