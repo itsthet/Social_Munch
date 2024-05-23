@@ -1,18 +1,18 @@
 <div class="content" data-controller="filter">
   <div class="title">
-    <h1>Recipes You Can Make</h1>
-    <div class="search-container">
-        <div class="search-box">
-          <%= form_tag(recipes_path, method: :get) do %>
-            <%= text_field_tag :ingredients, nil, data: {typedjs_target: "input"}, placeholder:"Type Your Ingredients"%>
-            <%= submit_tag "Search", class: "search-button" %>
-          <% end %>
-        </div>
-    </div>
-  <div class="subtitle">
+  <h1>Filter for Dietary Requirements</h1>
+ <div class="search-container">
+  <div class="search-box">
+    <%= form_tag(recipes_path, method: :get, class: 'search-form') do %>
+      <%= text_field_tag :ingredients, nil, data: { typedjs_target: "input" }, placeholder: "Type Your Ingredients", class: 'search-input', style: 'font-weight: 200; width: 500px; height: 60px; font-size: 25px; border-style: hidden; border-radius: 25px; font-family: "Crimson Text";' %>
+      <%= button_tag type: 'submit', class: 'search-button-2', style: 'border-radius: 25px; width: 60px; height: 60px; font-size: 30px; background-color: #17674A; padding: 3px; margin-right: 45px; margin-left: 0px; color: white; font-family: "Crimson Text"; margin-bottom: 10px;' do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    <% end %>
   </div>
+</div>
 
-    <h3>Filter for Dietary Requirements</h3>
+
   </div>
   <div class="buttons-container">
     <button class="round-button" data-action="click->filter#filter" data-filter-target="button" data-filter="VE">VE</button>
@@ -49,7 +49,7 @@
         </p>
         <% if recipe.cooking_time.present? %>
           <p>
-            <i class="fas fa-clock"></i> <%= recipe.cooking_time %> minutes
+            <i class="fa-regular fa-clock"></i> <%= recipe.cooking_time %> minutes
           </p>
         <% end %>
         <p class="dietary-requirements">
