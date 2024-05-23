@@ -22,9 +22,9 @@
       padding-right: 30px;
     }
 
-    .details-nutrition {
-      margin-left: 200px;
-    }
+    // .details-nutrition {
+    //   margin-left: 200px;
+    // }
 
 
     .recipe-images {
@@ -62,7 +62,7 @@
 
 
     .recipe-details {
-      margin-left: 10px;
+      margin-left: 50px;
       margin-right: 50px;
       // padding: 70px;
 
@@ -211,6 +211,7 @@
       font-size: 24px;
       margin-right: 5px;
     }
+
   }
 
 .actions {
@@ -230,4 +231,17 @@
 
 .reccomende-recipes {
   margin: 0 30px;
+}
+.recipe-card-2 {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #D0E7DF;
+  margin-left: 30px;
+  margin-right: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
