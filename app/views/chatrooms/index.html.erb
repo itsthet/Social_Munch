@@ -1,9 +1,7 @@
 <div class="rooms">
 <h1>GrubHub</h1>
 
-<p>
-  <%= link_to 'New Hub', new_chatroom_path, class: 'btn btn-primary' %>
-</p>
+
 
 <div class="chatrooms-container">
   <% @chatrooms.each do |chatroom| %>
@@ -14,16 +12,22 @@
 </div>
 </div>
 
+<p>
+  <%= link_to 'New Hub', new_chatroom_path, class: 'btn btn-primary' %>
+</p>
+
 <style>
 
   h1 {
     font-family: 'Crimson text';
+    font-size: 50px;
     margin-left: 30px;
     margin-top: 20px;
   }
 
   p {
     margin-left: 30px;
+    margin-top: 50px;
   }
   .chatrooms-container {
     display: flex;
