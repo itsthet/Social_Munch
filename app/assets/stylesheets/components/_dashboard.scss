@@ -1,0 +1,110 @@
+.container {
+  padding: 0 30px;
+}
+
+.header {
+  background-color: #FDF4F4;
+}
+
+.title {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.title, .subtitle  {
+  background-color: #FAF4F3;
+  font-family: Crimson Text;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  padding-left: 60px;
+}
+
+.buttons-container {
+  padding-left: 60px;
+  background-color: #FAF4F3;
+}
+
+.round-button {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background-color: #17674A;
+  margin-right: 10px;
+  color: white;
+  font-family: Crimson Text;
+  cursor: pointer;
+}
+
+.round-button.active {
+  border: 2px solid black;
+}
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 30px;
+  background-color: white;
+}
+
+.recipe-details {
+  flex: 1;
+  padding: 20px;
+  min-width: 0;
+}
+
+.recipe-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 25px;
+  font-family: 'Crimson Text';
+}
+
+.recipe-card-2 {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #D0E7DF;
+  margin-left: 30px;
+  margin-right: 30px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.recipe-image {
+  flex: 0 0 200px;
+}
+
+.recipe-image img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 15px;
+}
+
+.dietary-requirements {
+  font-style: italic;
+  color: #666;
+}
+
+.star-rating {
+  display: inline-block;
+}
+
+.star-filled {
+  color: gold;
+}
+
+.bi-star,
+.bi-star-fill {
+  font-size: 1.2em;
+}

@@ -1,19 +1,47 @@
-<div class="container">
-  <h1>Welcome to Your Dashboard</h1>
-  <h2>Favourite Recipes</h2>
-  <ul>
-    <% current_user.favourites.each do |favourite| %>
-      <div class="card-product">
-        <% if favourite.recipe.photo.attached? %>
-          <%= cl_image_tag(favourite.recipe.photo.key, class: "recipe_images") %>
-        <% else %>
-          <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
-        <% end %>
-        <div class="card-product-infos">
-          <h2><%= favourite.recipe.name %></h2>
-          <p><%= favourite.recipe.description %></p>
+<h2 class="dashboard-title">My Favourite Recipes</h2>
+<div class="dashboard-content">
+  <% if @favourite_recipes.present? %>
+    <div class="recipes">
+      <% @favourite_recipes.each do |recipe| %>
+        <div class="recipe-card-2" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
+          <div class="recipe-image">
+            <%= link_to recipe_path(recipe) do %>
+              <% if recipe.photo.attached? %>
+                <%= cl_image_tag(recipe.photo.key, class: "recipe-image") %>
+              <% else %>
+                <%= image_tag 'default-recipe-image.jpg', class: "recipe-image" %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="recipe-details">
+            <h3><%= recipe.name %></h3>
+            <p>
+              <span class="star-rating">
+                <% (1..5).each do |i| %>
+                  <% if i <= recipe.average_rating.ceil %>
+                    <span class="bi bi-star-fill star-filled"></span>
+                  <% else %>
+                    <span class="bi bi-star"></span>
+                  <% end %>
+                <% end %>
+              </span>
+            </p>
+            <% if recipe.cooking_time.present? %>
+              <p>
+                <i class="fas fa-clock"></i> <%= recipe.cooking_time %> minutes
+              </p>
+            <% end %>
+            <p class="dietary-requirements">
+              Dietary Requirements: <%= recipe.dietary_requirements %>
+            </p>
+            <div class="recipe-actions">
+              <%= link_to 'Remove from Favourites', recipe_path(recipe),remote: true, method: :delete, class: "btn btn-danger" %>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </ul>
+      <% end %>
+    </div>
+  <% else %>
+    <p>You have no favourite recipes.</p>
+  <% end %>
 </div>
