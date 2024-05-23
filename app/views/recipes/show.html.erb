@@ -150,9 +150,7 @@
 
 
 
-
-<h3 style="margin-left: 70px;">Recommended Recipes</h3>
-
+<h3 style="margin-left: 60px;">Recommended Recipes</h3>
 <div class="recipes">
   <% @recommended_recipes.each do |recipe| %>
     <div class="recipe-card-2" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
@@ -186,8 +184,7 @@
         <p class="dietary-requirements">
           Dietary Requirements: <%= recipe.dietary_requirements %>
         </p>
-
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
