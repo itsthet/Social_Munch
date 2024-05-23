@@ -132,25 +132,40 @@
   <% end %>
 </div>
 
-<h3>Recommended Recipes</h3>
+<h3 style="margin-left: 70px;">Recommended Recipes</h3>
 <div class="recipes">
-  <% @recommended_recipes.each do |recommended_recipe| %>
-    <div class="card recipe-card">
-      <div class="card-body">
-        <h4 class="card-title"><%= link_to recommended_recipe.name, recipe_path(recommended_recipe), class: "recipe-link" %></h4>
-        <% if recommended_recipe.photo.attached? %>
-          <div class="recipe-image">
-            <%= link_to recipe_path(recommended_recipe) do %>
-              <%= cl_image_tag(recommended_recipe.photo.key, class: "card-img-top recipe-image") %>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="recipe-image">
-            <%= link_to recipe_path(recommended_recipe) do %>
-              <%= image_tag 'gnocchi.jpeg', class: "card-img-top recipe-image" %>
-            <% end %>
-          </div>
+  <% @recommended_recipes.each do |recipe| %>
+    <div class="recipe-card-2" data-requirements="<%= recipe.dietary_requirements %>" data-filter-target="recipe">
+      <div class="recipe-image">
+        <%= link_to recipe_path(recipe) do %>
+          <% if recipe.photo.attached? %>
+            <%= cl_image_tag(recipe.photo.key, class: "recipe-image") %>
+          <% else %>
+            <%= image_tag 'gnocchi.jpeg', class: "recipe-image" %>
+          <% end %>
         <% end %>
+      </div>
+      <div class="recipe-details">
+        <h3><%= recipe.name %></h3>
+        <p>
+          <span class="star-rating">
+            <% (1..5).each do |i| %>
+              <% if i <= recipe.average_rating.ceil %>
+                <span class="bi bi-star-fill star-filled"></span>
+              <% else %>
+                <span class="bi bi-star"></span>
+              <% end %>
+            <% end %>
+          </span>
+        </p>
+        <% if recipe.cooking_time.present? %>
+          <p>
+            <i class="fas fa-clock"></i> <%= recipe.cooking_time %> minutes
+          </p>
+        <% end %>
+        <p class="dietary-requirements">
+          Dietary Requirements: <%= recipe.dietary_requirements %>
+        </p>
       </div>
     </div>
   <% end %>
