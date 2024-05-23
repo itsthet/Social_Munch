@@ -3,7 +3,7 @@
 }
 
 .header {
-  background-color: #FDF4F4;
+  background-color: #ede1e7;
 }
 
 .title {
@@ -14,7 +14,7 @@
 }
 
 .title, .subtitle  {
-  background-color: #FAF4F3;
+  background-color: #ede1e7;
   font-family: Crimson Text;
   padding-top: 30px;
   padding-bottom: 15px;
@@ -23,7 +23,7 @@
 
 .buttons-container {
   padding-left: 60px;
-  background-color: #FAF4F3;
+  background-color: #ede1e7;
 
 }
 
@@ -40,7 +40,13 @@
   font-family: Crimson Text;
   cursor: pointer;
   margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+
+
+
 }
+
+
 
 .round-button.active {
   border: 2px solid black;
