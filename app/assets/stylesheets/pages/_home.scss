@@ -130,6 +130,10 @@
   text-align: center;
   font-family: 'Crimson Text' !important;
 
+  h2 {
+    font-family: 'Crimson Text';
+  }
+
 }
 
 .recipe-name {
@@ -217,11 +221,24 @@
 }
 
 .footer {
-  background-color: white;
+  background-color: #17674A;
   padding: 25px;
   text-align: center;
   height: 200px;
   font: 48px;
+  margin-top: 50px;
+
+  h2 {
+    font-family: 'Crimson Text';
+    margin-top: 20px;
+    color: white;
+  }
+
+  p {
+    font-family: 'Crimson Text';
+
+    color: white;
+  }
 }
 
 
@@ -355,15 +372,18 @@
 .search-container-2 {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .search-button-2 {
-  background-color: #17674A;
-  font-size: 14px;
+  background-color: #ede1e7;
+  font-size: 17px;
   padding: 0px;
   margin-right: 45px;
-  color: white;
+  color: black;
+  font-family: 'Crimson text';
 }
 
 .search-button-2:hover {
