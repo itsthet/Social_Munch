@@ -121,26 +121,27 @@
 </div>
 
 
-<div class="reviews">
+<div class="reviews mt-5">
 
-  <div class="actions">
-    <p><strong>All Reviews</strong></p>
+  <div class="actions mb-3">
+    <h3 class="text-center" style="font-family: 'Crimson Text', serif;">All Reviews</h3>
     <%= link_to "Add New Review", new_recipe_review_path(@recipe), class: "btn btn-primary" %>
   </div>
 
   <ul class="list-group">
     <% @recipe.reviews.each do |review| %>
-      <li class="list-group-item">
-        <%= review.comment %>
-        <% if review.image.attached? %>
-          <%= image_tag review.image, class: "review-image" %>
-        <% end %>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="review-content">
+          <p class="mb-1"><%= review.comment %></p>
+          <% if review.image.attached? %>
+            <%= image_tag review.image, class: "review-image img-thumbnail" %>
+          <% end %>
+        </div>
+        <small class="text-muted">Reviewed on <%= review.created_at.strftime("%B %d, %Y") %></small>
       </li>
     <% end %>
   </ul>
 </div>
-
-
 
 
 
@@ -183,7 +184,7 @@
             </p>
           <% end %>
           <p class="dietary-requirements">
-            Dietary Requirements: <%= recipe.dietary_requirements %>
+            <%= recipe.dietary_requirements %>
           </p>
 
         </div>
