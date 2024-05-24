@@ -194,6 +194,16 @@
 
 .recipe-magic {
 
+  .text-and-image {
+    display: flex;
+    justify-content: space-around;
+
+    img {
+      width: 60px;
+
+    }
+   }
+
   h2{
     font-size: 40px;
     font-family: 'Crimson Text';
@@ -248,6 +258,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+
 }
 
 .step-1 {

@@ -239,7 +239,7 @@
 
 
 .text-success {
-  color: #e3b1ca !important;
+  color: #cc527a !important;
   font-size: 40px !important;
 }
 
@@ -250,6 +250,11 @@
   margin-top: 70px;
   margin-bottom: 200px;
   text-align: center;
+
+  h3 {
+    font-family: 'Crimson Text';
+    font-size: 30px;
+  }
 }
 
 .recommeded-recipes-container {
