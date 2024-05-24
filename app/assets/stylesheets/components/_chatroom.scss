@@ -1,7 +1,18 @@
 // chatroom.scss
 
+
+.background {
+  background-image: image-url('Banner.jpg'); /* Replace with the path to your image */
+  background-size: cover; /* Adjusts the background image to cover the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Ensures the background image is not repeated */
+  margin: 0;
+  padding: 0;
+  height: 1000px;
+}
+
 .container.chatroom {
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
   padding: 20px;
   background-color: #f8f9fa;
@@ -17,7 +28,7 @@
 
   .messages {
     margin-bottom: 20px;
-    max-height: 500px;
+    max-height: 870px;
     overflow-y: auto;
     padding-right: 10px;
     display: flex; /* Ensure .messages container is a flex container */
@@ -61,22 +72,23 @@
 
     .message-input {
       flex-grow: 1;
-      margin-right: 10px;
+      margin-right: 0px;
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;
+      width: 680px;
     }
 
     .message-submit {
       min-width: 80px;
-      align-self: flex-end;
       padding: 10px 20px;
-      background-color: #007bff;
+      background-color: #17674A;
       color: #fff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-left: 0px;
 
       &:hover {
         background-color: #0056b3;

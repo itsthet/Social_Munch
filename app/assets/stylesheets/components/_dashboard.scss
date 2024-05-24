@@ -2,8 +2,11 @@
   padding: 0 30px;
 }
 
+
 .header {
   background-color: #FDF4F4;
+  font-family:'Crimson text';
+
 }
 
 .title {
@@ -47,7 +50,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 30px;
-  background-color: white;
+  background-color: #ede1e7;
 }
 
 .recipe-details {

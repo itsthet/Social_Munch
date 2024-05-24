@@ -67,24 +67,24 @@
                 <div class="category-amount"><%= @recipe.protein %>g</div>
               </div>
             </td>
-            <td>
-              <div class="category-box">
-                <div class="category-name">Carbs</div>
-                <div class="category-amount"></div>
-              </div>
-            </td>
-            <td>
-              <div class="category-box">
-                <div class="category-name">Fibre</div>
-                <div class="category-amount"></div>
-              </div>
-            </td>
-            <td>
-              <div class="category-box">
-                <div class="category-name">Sugar</div>
-                <div class="category-amount"></div>
-              </div>
-            </td>
+           <td>
+            <div class="category-box">
+              <div class="category-name">Carbs</div>
+              <div class="category-amount"><%= @recipe.carbs %>g</div>
+            </div>
+          </td>
+          <td>
+            <div class="category-box">
+              <div class="category-name">Fibre</div>
+              <div class="category-amount"><%= @recipe.fiber %>g</div>
+            </div>
+          </td>
+          <td>
+            <div class="category-box">
+              <div class="category-name">Sugar</div>
+              <div class="category-amount"><%= @recipe.sugar %>g</div>
+            </div>
+          </td>
             <!-- Add more category cells as needed -->
           </tr>
         </tbody>
@@ -145,6 +145,7 @@
 
 
 
+
 <div class="recommended-recipes">
   <h3>Recommended Recipes</h3>
 
@@ -186,6 +187,7 @@
           </p>
 
         </div>
+
       </div>
     <% end %>
   </div>

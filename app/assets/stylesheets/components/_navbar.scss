@@ -2,7 +2,7 @@
 
   .container-fluid{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -12,16 +12,34 @@
     text-decoration: none;
     color: white;
     font-family: 'Crimson Text';
-    font-size: 20px;
+    font-size: 50px;
   }
 
   h1 {
     font-size: 60px;
     color: white;
-    font-family: 'Crimson Text'
+    font-family: 'Crimson Text';
+    margin-right: 1165px;
   }
 }
 
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+
+  .nav-link {
+    color: white;
+    font-family: 'Crimson Text';
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  .avatar {
+    margin-left: 20px;
+  }
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

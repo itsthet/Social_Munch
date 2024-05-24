@@ -4,13 +4,7 @@
   padding: 0px;
 }
 
-.banner h1{
-  color: black;
-  font-size: 64px;
-  margin: 0;
-  margin-left: 30px;
-  font-family: 'Crimson Text';
-}
+
 
 .banner-buttons {
   display: flex;
@@ -159,7 +153,7 @@
 }
 
 .feeling-confident {
-  background-color: #ede7e6;
+  background-color: #ede1e7;
   padding: 50px;
   text-align: center;
   padding:20px;
@@ -168,6 +162,11 @@
   margin-bottom: 100px;
   margin-left: 30px;
   margin-right: 30px;
+
+  h2 {
+    font-size: 40px;
+    font-family: 'Crimson text';
+  }
 }
 
 .random-recipe {
@@ -182,6 +181,7 @@
   border-radius: 5px;
   font-size: 20px;
   margin: 1.5%;
+  font-family: 'Crimson text';
 }
 
 .random-button:hover {
@@ -198,6 +198,8 @@
     font-size: 30px;
     font-weight: bold;
     font-family: 'Crimson Text';
+    padding-top: 15px;
+    padding-bottom: 10px;
   }
 
   h6 {
@@ -222,13 +224,21 @@
   font: 48px;
 }
 
+
+.step1, .step2, .step3 {
+  h4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 .step-1 {
   padding: 10px;
   margin-top: 40px;
   margin-bottom: 40px;
   text-align: right;
   padding: 25px;
-  background-color: #FAF4F3;
+  background-color: #ede1e7;
   width: 75%;
   height: 200px;
   border-radius: 5px;
@@ -240,7 +250,7 @@
   margin-bottom: 40px;
   text-align: left;
   padding: 25px;
-  background-color: #FAF4F3;
+  background-color: #ede1e7;
   width: 75%;
   height: 200px;
   border-radius: 5px;
@@ -252,7 +262,7 @@
   margin-bottom: 40px;
   text-align: right;
   padding: 25px;
-  background-color: #FAF4F3;
+  background-color: #ede1e7;
   width: 75%;
   height: 200px;
   border-radius: 5px;

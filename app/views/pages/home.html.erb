@@ -1,26 +1,18 @@
-<div class="banner">
 
-  <div class="banner-buttons">
-
-    <%#= link_to "Dashboard", dashboard_path, class: "button" %>
-    <%#= link_to "Challenges", challenges_path, class: "button" %>
-    <%#= link_to "Log In", login_path, class: "button" %>
-  </div>
-</div>
 
 
 
 
 <div class="search-bar" data-controller="typedjs">
     <div class="h2" >
-      Enter Your Ingredients and See the Magic
+      Search. Cook. Interact.
     </div>
 
 
   <div class="search-container">
   <div class="search-box">
     <%= form_tag(recipes_path, method: :get, class: 'search-form') do %>
-      <%= text_field_tag :ingredients, nil, data: { typedjs_target: "input" }, placeholder: "Type Your Ingredients", class: 'search-input' %>
+      <%= text_field_tag :ingredients, nil, data: { typedjs_target: "input" }, placeholder: "Enter Your Ingredients & See The Magic...", class: 'search-input' %>
       <%= button_tag type: 'submit', class: 'search-button' do %>
         <i class="fa fa-search"></i>
       <% end %>
@@ -28,9 +20,6 @@
   </div>
 </div>
 
-    <div class="all-recipes">
-      <%= link_to 'View All Recipes', recipes_path, class: 'btn btn-secondary my-3', style: 'border-radius: 12px;' %>
-    </div>
 
 
 </div>
@@ -88,7 +77,7 @@
   <div class="w-100 d-flex justify-content-end">
     <div class="step-2">
       <h4>Reduce Waste - Save Money</h4>
-      <h6>The average household wastes £150/month in wasted food. We help you save money by creating intelligient<br>
+      <h6>The average household wastes £150/month in wasted food. We help you save money by creating intelligient.<br>
       and delicious ways to use up leftover ingredients.</h6>
     </div>
   </div>
