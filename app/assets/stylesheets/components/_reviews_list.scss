@@ -1,0 +1,34 @@
+.reviews {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.reviews h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #343a40;
+}
+
+.reviews .list-group-item {
+  margin-bottom: 10px;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.reviews .review-content {
+  flex-grow: 1;
+}
+
+.reviews .review-image {
+  max-width: 100px;
+  max-height: 100px;
+  margin-left: 15px;
+}
+
+.reviews .text-muted {
+  font-size: 0.875rem;
+}
